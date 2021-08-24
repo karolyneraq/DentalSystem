@@ -10,5 +10,3 @@ Anne Cristine de Oliveira Mota
 Giovana Vitória dos Santos Lima
 
 Raquel Karolyne Carlotto Santos
-
-lalalalala
