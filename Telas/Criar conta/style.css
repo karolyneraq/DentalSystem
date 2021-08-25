@@ -37,10 +37,12 @@ h1{
     grid-area: main;
 }
 
+h2, .o-login, .o-email, .o-user, .o-senha, .email, .user, .senha, .cadastrar, .o-termo{
+    font-family: Roboto;
+
+}
+
 h2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 44px;
     line-height: 52px;
     text-align: center;
@@ -48,9 +50,6 @@ h2{
 }
 
 .o-login{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 23px;
     line-height: 27px;
     text-align: center;
@@ -60,9 +59,6 @@ h2{
 }
 
 .o-email, .o-user, .o-senha{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 23px;
     line-height: 27px;
     padding-left: 200px;
@@ -70,7 +66,7 @@ h2{
 }
 .email, .user, .senha {
     margin-left: 200px;
-    margin-top: 10px;
+    margin-top: 2px;
     width: 636px;
     height: 60px;
     border: 3px solid;
@@ -79,7 +75,6 @@ h2{
     text-align: left;
     outline: none;
     font-size: 23px;
-    
 }
 .bt{
     text-align: center;
@@ -92,14 +87,11 @@ h2{
     width: 636px;
     height: 60px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 25px;
 }
 
 .o-termo{
     padding-top: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 21px;
     text-align: center;

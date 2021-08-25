@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css"/>
+    
+    <!-- Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Bootstreap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Telas/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
     <title>Dental System</title>
 </head>
 <body>
@@ -13,20 +29,24 @@
             <section class="o-header">
                 <h1>DentalSystem</h1>
             </section>
-            <section class="o-content">
-                <div class="box">
-                    <div class="texto">Registre-se ou Faça o Login</div>
-
-                    <input class="email" type="text" placeholder="Email">
-
-                    <input class="senha"  type="password" placeholder="Senha">
-
-                    <div class="bt">
-                        <button class="cadastrar">Login</button>
+            <section>
+                <div class="card" id = "telaLogin">
+                    <div class="card-body">
+                        <div class="texto">Registre-se ou Faça o Login</div>
+                        <form>
+                            <div class="form-group">
+                              <div class="campos">Email</div>
+                              <input class="email" type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Informe seu email">
+                            </div>
+                            <div class="form-group">
+                            <div class="campos">Senha</div>
+                              <input class="senha" type="password" class="form-control" id="" placeholder="Insira sua Senha">
+                            </div>
+                            <button type="submit" class="cadastrar">Entrar</button>
+                            <p class="o-registro">ou <br> Registre-se gratuitamente</p>
+                          </form>
                     </div>
-                    <p class="o-registro">ou <br> Registre-se gratuitamente</p>
-
-                </div>
+                  </div>
             </section>
         </div>
     </div>
