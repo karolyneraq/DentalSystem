@@ -13,6 +13,7 @@
 
     <!-- Bootstreap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Telas/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css"/>
 
     <!-- Scripts-->
@@ -30,23 +31,24 @@
             </div>
         </header>
         <main class="o-main">
-
-            <h2>Criar uma conta</h2>
-            <p class="o-login">Já possui uma conta? <a href="url">Faça login</a></p>
-
-            <p class="o-email">Seu endereço de email</p>
-            <input class="email" type="text" placeholder="Email">
-
-            <p class="o-user">Nome de usuário</p>
-            <input class="user"  type="text" placeholder="Nome de usuário">
-
-            <p class="o-senha">Digite uma senha</p>
-            <input class="senha"  type="password" placeholder="Senha">
-
-            <div class="bt">
-                <button class="cadastrar">Criar conta</button>
-            </div>
-            <p class="o-termo">Ao criar uma conta, você concorda com os nossos <a href="url">Termos e Condições</a></p>
+            <form id="formulario">
+                <h2>Criar uma conta</h2>
+                <p class="o-login">Já possui uma conta? <a href="url">Faça login</a></p>
+                <div class="form-group">
+                    <p class="o-email">Seu endereço de email</p>
+                    <input class="form-control" type="email" id="email-input" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <p class="o-user">Nome de usuário</p>
+                    <input class="form-control" type="text" id="usuario-input" placeholder="Usuário">
+                </div>
+                <div class="form-group">
+                    <p class="o-senha">Insira uma senha</p>
+                    <input class="form-control" type="password" id="senha-input" placeholder="Senha">
+                </div>
+                <button type="submit" class="btn btn-primary" id="cadastrar-button">Cadastrar</button>
+                <p class="o-termo">Ao criar uma conta, você concorda com os nossos <a href="url">Termos e Condições</a></p>
+                </form>
         </main>
     </div>
 </body>

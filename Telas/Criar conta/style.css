@@ -21,11 +21,10 @@
 
 h1{
     font-family: Source Serif Pro;
-    font-size: 72px;
-    line-height: 112px;
+    font-size: 50px;
     color: white;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .o-title{
@@ -43,57 +42,56 @@ h2, .o-login, .o-email, .o-user, .o-senha, .email, .user, .senha, .cadastrar, .o
 }
 
 h2{
-    font-size: 44px;
-    line-height: 52px;
+    font-size: 33px;
     text-align: center;
     padding-top: 25px;
+    font-weight: 590;
 }
 
 .o-login{
-    font-size: 23px;
-    line-height: 27px;
+    font-size: 18px;
     text-align: center;
     color: #525252;
-    padding-top: 25px;
-    padding-bottom: 20px;
+}
+
+#formulario{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .o-email, .o-user, .o-senha{
-    font-size: 23px;
-    line-height: 27px;
-    padding-left: 200px;
-    margin-top: 30px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-.email, .user, .senha {
-    margin-left: 200px;
-    margin-top: 2px;
-    width: 636px;
-    height: 60px;
-    border: 3px solid;
-    border-color: #57CC97;
+#email-input, #senha-input, #usuario-input{
     border-radius: 10px;
+    border-color: #57CC97;
+    width: 450px;
+    height: 45px;
+    border-width: 3px;
     text-align: left;
     outline: none;
-    font-size: 23px;
-}
-.bt{
-    text-align: center;
-}
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 5px;
+  }
 
-.cadastrar{
-    margin-top: 40px;
+#cadastrar-button{
+    margin-top: 20px;
     background: #173C6D;
     border-radius: 10px;
-    width: 636px;
-    height: 60px;
+    width: 450px;
+    height: 45px;
     color: white;
-    font-size: 25px;
-}
+    font-size: 18px;
+  }
 
 .o-termo{
-    padding-top: 20px;
-    font-size: 18px;
+    padding-top: 10px;
+    font-size: 14px;
     line-height: 21px;
-    text-align: center;
     color: #525252;
 }
