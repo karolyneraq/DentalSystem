@@ -8,10 +8,6 @@ body {
   background: #f7f6ff;
 }
 
-h2 {
-  margin: 16px;
-}
-
 .container {
   margin-top: 100px;
   padding: 32px;
@@ -25,8 +21,9 @@ h2 {
 }
 
 .select-box .options-container {
-  background: #2f3640;
-  color: #f5f6fa;
+  background: #FFFFFF;
+  color: #000000;
+  border: 4px solid #57cc97;
   max-height: 0;
   width: 100%;
   opacity: 0;
@@ -38,10 +35,11 @@ h2 {
 }
 
 .selected {
-  background: #2f3640;
+  background: #FFFFFF;
   border-radius: 8px;
   margin-bottom: 8px;
-  color: #f5f6fa;
+  color: #000000;
+  border: 4px solid #57cc97;
   position: relative;
 
   order: 0;
@@ -76,13 +74,13 @@ h2 {
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: #0d141f;
-  border-radius: 0 8px 8px 0;
+  background: #57cc97;
+  border-radius: 0 0 0 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
   background: #525861;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px 8px 8px 8px;
 }
 
 .select-box .option,
@@ -92,7 +90,7 @@ h2 {
 }
 
 .select-box .option:hover {
-  background: #414b57;
+  background: #57cc97;
 }
 
 .select-box label {
@@ -113,7 +111,7 @@ h2 {
   position: absolute;
   border-radius: 8px 8px 0 0;
   z-index: 100;
-  border: 8px solid #2f3640;
+  border: 4px solid #57cc97;
 
   opacity: 0;
   pointer-events: none;
