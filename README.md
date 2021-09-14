@@ -25,3 +25,5 @@ Para enviar as atualizações pro repositório
 4º Use git commit -m "atualização q vc fez" em seguida, TODO COMMIT PRECISA TER MENSAGEM SE N TIVER N FUNCIONA
 5º Para enviar para o github use git push.
 6º verifique se as alterações foram para o repositório no github
+
+A pasta de telas está em dentalSystem/target/classes/static/Telas
