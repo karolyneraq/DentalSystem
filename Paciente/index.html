@@ -42,7 +42,8 @@
         <form id="formulario">
             <div class="form-group">
                 <p class="o-pacientes">Buscar paciente</p>
-                <input class="form-control" type="text" id="paciente-input"placeholder="Buscar paciente">
+                <input class="form-control" type="text" id="paciente-input"placeholder="Buscar paciente" aria-label="Search"
+                aria-describedby="search-addon"/>
             </div>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarModal" onclick="loadModalCadastrar()" id="cadastrar-button">Cadastrar Paciente</button>
             

@@ -184,10 +184,24 @@ h2, .o-pacientes .cadastrar{
     font-family: Roboto;
     margin-top: 5px;
   }
-  #nome-completo-input, #celular-input, #cpf-input,  #rg-input, #data-nasc-input{
+  #nome-completo-input, #celular-input, #cpf-input,  #rg-input{
     border-radius: 10px;
     border-color: #57CC97;
     width: 380px;
+    height: 40px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 10px;
+    display: inline-block;    
+  }
+
+  #data-nasc-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 250px;
     height: 45px;
     border-width: 3px;
     text-align: left;
@@ -195,8 +209,7 @@ h2, .o-pacientes .cadastrar{
     font-size: 16px;
     font-family: Roboto;
     margin-top: 10px;
-    display: inline-block;
-    
+    display: inline-block;  
   }
 
 #cadastrar-button{
@@ -264,7 +277,31 @@ h2, .o-pacientes .cadastrar{
 #busca input:focus{
     outline: none;
 }
+.listagem{
+    display: grid;
+    grid-template-columns: 1.3fr 0.6fr 0.6fr 0.2fr 0.2fr;
+}
 
+#titulo-listagem{
+    background: rgba(160, 238, 202, 0.3);
+    border-radius: 5px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+/*Outras definições*/
 
   h5{
     font-weight: bold;
