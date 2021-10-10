@@ -48,9 +48,9 @@ header > h1{
 nav{
     position: relative;
     margin: 0%;
-    height: 50px;
+    height: 45px;
     background-color: #173C6D;
-    padding: 19px;
+    padding: 10px;
     justify-content: space-between;
     font-size: 0;
     box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
@@ -71,7 +71,7 @@ nav > a{
 nav .animation{
     position:absolute;
     height: 5px;
-    top: 45px;
+    top: 40px;
     z-index: 0;
     background: #1abc9c;
     width: 0px;
@@ -329,4 +329,9 @@ h6{
 h7{
     margin: 5px;
     color: black;
+}
+
+#button-excluir{
+    background: #173C6D;
+    color:white;  
 }
