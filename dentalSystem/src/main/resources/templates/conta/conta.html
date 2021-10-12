@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http:ultraq.net.nez/thymeleaf/layout">
+
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +17,15 @@
             <h1>DentalSystem</h1>
         </header>
         <main class="o-main">
+         
+          
 
             <h2>Criar uma conta</h2>
             <p class="o-login">Já possui uma conta? <a href="url">Faça login</a></p>
-
+            
+            
+            <form th:action="@{/clinica/add}"  th:object="${clinica}" method="POST">
+             <div class="form-group">
             <p class="o-email">Seu endereço de email</p>
             <input class="email" type="text" placeholder="Email">
 
@@ -31,6 +39,7 @@
                 <button class="cadastrar">Criar conta</button>
             </div>
             <p class="o-termo">Ao criar uma conta, você concorda com os nossos <a href="url">Termos e Condições</a></p>
+            </form>
         </main>
     </div>
 </body>

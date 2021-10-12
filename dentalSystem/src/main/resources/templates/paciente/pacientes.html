@@ -59,7 +59,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <form th:action="@{/testeadd}"  th:object="${paciente}" method="POST">
+                <form th:action="@{/paciente/add}"  th:object="${paciente}" method="POST">
                   <div class="form-group">
                     <input class="form-control" type="text" th:field="*{nome}" placeholder="Nome Completo">
                     <input class="form-control" type="text"  th:field="*{celular}" placeholder="Celular">
@@ -79,13 +79,12 @@
                     </div>
                     -->
                   </div>
-      			              <div class="modal-footer">
+      			  <div class="modal-footer">
                 <button type="button" class="btn btn-cancelar" id="button-cancelar" data-dismiss="modal">Cancelar</button> 
                 <button type="submit" class="btn btn-cadastrar" id="button-cadastrar" data-dismiss="modal">Cadastrar</button>
               </div>
                 </form>
               </div>
-
             </div>
           </div>
         </div>

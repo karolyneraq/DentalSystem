@@ -3,22 +3,26 @@ package br.com.lp2.projeto.dentalSystem.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.lp2.projeto.dentalSystem.dto.LoginDTO;
 import br.com.lp2.projeto.dentalSystem.service.login.DentalSystemServiceLogin;
 
-@RestController
-@RequestMapping("/login")
+@Controller
+@RequestMapping("/clinica")
 public class LoginController {
 
 	@Autowired
     private DentalSystemServiceLogin service;
 
-	@GetMapping(value = "/greet/{name}")
-    public String greet(@PathVariable(value = "name") String name){
-        return  "Olá, "+name;
-    }
+	 @GetMapping("/cadastro")
+		public String login(Model model) {
+			 model.addAttribute("login", new LoginDTO());
+			return "conta/conta";
+	}
+	
 
     @GetMapping(value = "/list")
     public ResponseEntity list(){

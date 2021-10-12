@@ -11,7 +11,8 @@ public class LoginDTO {
 	private String senha;
 	
 	
-	public LoginDTO(String id, String usuario, String email, String senha) {
+	
+	public LoginDTO() {
 		super();
 		this.id = id;
 		this.usuario = usuario;

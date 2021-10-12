@@ -26,8 +26,8 @@ public class LoginUsuarioController {
 		return "paciente/pacientes";
 	}
 	
-	  @PostMapping("/testeadd")
-	  public String greetingSubmit(@ModelAttribute PacienteDTO paciente, Model model) {
+	@PostMapping("/testeadd")
+	public String greetingSubmit(@ModelAttribute PacienteDTO paciente, Model model) {
 		  ResponseEntity a =  new ResponseEntity(service.add(paciente), HttpStatus.OK);
 		  return "ok";
 	  }
