@@ -1,0 +1,88 @@
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+
+}
+body{
+  background-image: url('image1.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin:0px;
+}
+
+h1{
+  font-family: Source Serif Pro;
+  font-size: 72px;
+  line-height: 112px;
+  color: white;
+  text-align: center;
+}
+
+.o-header{
+    background: #173C6D;
+}
+
+.content-grid{
+  width: auto;
+  height: 100vh;
+}
+
+.o-content{
+	width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center'
+}
+
+.box{
+  background: white;
+  width: 300px;
+  height: 300px;
+}
+.texto{
+  margin-top: 10px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.email, .nomeDentista, .senha, .nomeClinica {
+  margin-top: 30px;
+  margin-left: 25px;
+  width: 240px;
+  height: 35px;
+  border: 3px solid;
+  border-color: #57CC97;
+  border-radius: 10px;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+.bt{
+  text-align: center;
+}
+.cadastrar{
+  margin-top: 20px;
+  background: #173C6D;
+  border-radius: 10px;
+  width: 240px;
+  height: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.o-registro{
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #525252;
+}

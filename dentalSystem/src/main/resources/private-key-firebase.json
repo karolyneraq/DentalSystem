@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dentalsystem-d1c66",
+  "private_key_id": "7011135fbc37c4167670dbd0f94c05eaa95eb9f3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDY0WGoc+EX1qpl\npy0WmSxOR/EQ7osZUOU+xOigGePFMo78sbmO8RKr5Q3V95+xdxfxQ1+eNfHyC0tI\nKJ1I3ybFKgVV+qji0Vq4Irmue8fq5x4GQWBtvSwjKr6DcOAeEXrTFxJ5HbRbtDPb\nmK3AR0dQYBY0qQ0uRsNlepqral/kkSAo7DPP8vWDZvG3Hp3TVYdetZiTmUjqHaD6\njBwtZMolqTDgd0O7QFBL+wPGWWT2GPPlpmeG6U4AiCTQMY7KuL0oZExLrP+6YV0K\nP/bMMXeoLXgCC1TxACcwPPBYAj/6zbvZSKkuwvZCqgTS1ebc7BjBJJOjBx9aRwGy\nnFd6MqwpAgMBAAECggEADl8Skg/cQ7A+6y4BlxXgEfBC0lR9c9gg2eBDaxlMN636\nPFWrbwYbrrkoCZ64PxMdyygkFmCNAPYur0HB6yqfb0IxyFktCJvH35ytohsiTTe0\njcWXlq6LVmlm5197+4I9GfDVkKGfatSu+0dLfQs8dt9nmWX7Ma4PFZLi3anXYVb9\n8f1yaJkw3+rsP9X17WAynytzLOx4Fw0blKK7E3UHDHGhekAr6Q7dKjs5RBlez3YQ\nUIX6B+QHPgI8KgptXJA7UUBep5rLLgZ+vOH8yolFfTcfk6EKC4UVT0f8WQq6/0Ku\nZp2qMQubhxqwjskvUaeyOQQC3s2qyPPEQlseUDq8AQKBgQD9Yy2FB4XO8qktMVCx\ncW6t+OG0dsW0MOp9EmkA72bkS81hs4xU5bzFdx1J9KH4EYbk6tiZlbQ+gyBXjnPT\nhUFit0CnogpRrxSmJyyUJHEi3oJ/Xd/XdfOxqkeXBWlnLS2c6/MB1g/wh3/h/rv9\nDuR4cNDUBZimiRG9+pB0KDudOQKBgQDbDa1zfqrTDXP5om7SQXtbjnyIoNrUKZI4\nE5xJjTCq1RqioUUW1dJhR2ggouMZZXZBgjZRIeGqAcwX91WTQdYfbDUXsvqthkAt\nBeuvPF+udBANOR0DGuxZ6/O4fvfXvjRLo4xLfSGLduifrVbXuN9S9AasHpQYQBXX\nZRtoErp2cQKBgD1EC6+MoBfnqGwa7m3ZBW/fK4Oc7DSjVy8ikmz9dZ1hjqk+5oFo\ngvoj0Nse4UK/yiPzfKe2ALzUq68/7FWKdMLPmDxv+5rAgHekJS00mn5Z2qe9JPBN\nvryIdYLYdiHSVKMKkdkxzuzTdmJIW1/Wh/tvG68II16w6a9LtD3BtJhRAoGAMFrl\nliA5D1vh5RJhSlKgK4bZoMN5auo+V9ikYGwleSCPv6S//pl21niP2Nx8K0gFgdJ/\nsQs8qG27IvM7VcVrwgX99lxRD+sZ0ZaD/2vhZz5BqNmZuOzBjdwTMf/9MAfRvXy9\n5JAbzpCSK2V1TSuHSOWLb4VUhcHn0GOGWEQCG1ECgYEAsekDCJ3N514Mw6jGlHBi\niGJ5UIXyEf94oZWsUvvjRQ7WZXGiBSpoQBJrYJdBDqASVWR0pU8AP23+7pWCgoDO\nhn0FJqix5lqYFwxLvF3t4p70r6mpYNEpL8TjxYvq+tYOAAqdpAKCrdp9lRFJC8QN\nu7ggDWEOxSOuM0roSYVH32M=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-pwz7e@dentalsystem-d1c66.iam.gserviceaccount.com",
+  "client_id": "100829394221792137901",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-pwz7e%40dentalsystem-d1c66.iam.gserviceaccount.com"
+}
