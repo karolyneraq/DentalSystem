@@ -150,8 +150,6 @@ nav > a:hover{
 
 }
 
-/*Conteudo*/
-
 .paciente{
     background-color: #FFFDFD;
     padding-left: 40px;
@@ -194,29 +192,64 @@ h3{
     transition: all 0.4s;
 }
 
-/*Dados do paciente*/
-
 .o-footer{
     font-family: Roboto;
+    padding: 50px;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .card-header{
-    background-color: #A0EECA;
+    background-color: #173C6D;
+    color: white;
+}
+
+#message-text{
+    border-style: solid;
+    border-color: #173c6d00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 0px;
+  padding-top: 20px;
+}
+
+#button-cancelar{
+    background: #E5E5E5;
+    color: #173C6D;
+}
+#button-cadastrar{
+    background: #173C6D;
+    color:white;
+}
+
+.card-body{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-footer{
+    display: flex;
+}
+
+.cadastrar{
+    padding-right: 30px;
+}
+
+h4{
+    font-size: 16px;
+}
+
+.registros{
+    border-style: solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-width: 1px;
+    padding-top: 20px;
     display: grid;
-    grid-template-columns: 16fr 1fr;
-}
-
-.titulo{
-    padding-top: 8px;
-    padding-bottom: 0px;
-}
-
-.campos{
-    text-align: center;
-}
-
-.campos-texto{
-    font-weight: bold;
+    grid-template-columns: 35fr 1fr;
 }
 
 #btn-opcoes{
@@ -230,129 +263,45 @@ h3{
     padding-bottom: 0px;
 }
 
-.btn-options{
-    padding-bottom: 0px;
-    padding-top: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* Botão outlined - Cancelar*/
+.btn-outline-primary {
+    color: #173C6D;
+    background-color: transparent;
+    background-image: none;
+    border-color: #173C6D;
 }
 
-#dados-paciente{
-    padding-top: 0px;
+.btn-outline-primary:hover {
+    color: #FFFFFF;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
 }
 
-#campos-informacoes-paciente{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 20px;
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(119, 204, 204, 0.5)
 }
 
-.campos-consultas{
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 3fr 1.5fr;
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    color: #7cc;
+    background-color: transparent
 }
 
-.col-6{
-    padding-left: 50px;
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+    color: #212529;
+    background-color: #8ad3d3;
+    border-color: #7cc
 }
 
-.card{
-    max-height: 220px;
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(119, 204, 204, 0.5)
 }
 
-/*Historico*/
 
-#historico-options{
-    display: grid;
-    grid-template-columns: 4fr 1.2fr;
-}
 
-.btn-options-1{
-    padding-bottom: 0px;
-    padding-top: 4px;
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr;
-}
 
-.campos-historico{
-    display: grid;
-    grid-template-columns: 2fr 2fr 3fr;
-    text-align: center;
-}
-
-#historico{
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.campos-historico .data, .campos-historico .horario, .campos-historico .profissional{
-    padding-top: 15px;
-}
-
-.campos-historico .data{
-    border-style: solid;
-    border-color: #989898;
-    border-width: 0.5px;
-    border-bottom: 0ch;
-    border-top: 0ch;
-    border-left: 0ch;
-}
-
-.campos-historico .horario{
-    border-style: solid;
-    border-color: #989898;
-    border-width: 0.5px;
-    border-bottom: 0ch;
-    border-top: 0ch;
-    border-left: 0ch;
-}
-
-.info-1{
-    display: grid;
-    grid-template-columns: 2fr 2fr 3fr;
-    text-align: center;
-}
-
-.info-1 .horario, .info-1 .data, .info-1 .profissional{
-    padding-top: 10px;
-}
-
-.info-1 .horario{
-    border-style: solid;
-    border-color: #989898;
-    border-width: 0.5px;
-    border-bottom: 0ch;
-}
-
-.info-1 .data{
-    border-style: solid;
-    border-color: #989898;
-    border-width: 0.5px;
-    border-bottom: 0ch;
-    border-left: 0ch;
-    border-right: 0ch;
-}
-
-.info-1 .profissional{
-    border-style: solid;
-    border-color: #989898;
-    border-width: 0.5px;
-    border-bottom: 0ch;
-    border-left: 0ch;
-    border-right: 0ch;
-}
-
-/*Mensagens*/
-
-#btn-menu{
-    padding: 0;
-}
-
-.message-hint{
-    color: #989898;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}

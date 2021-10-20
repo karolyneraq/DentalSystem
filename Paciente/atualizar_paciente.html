@@ -1,0 +1,54 @@
+<div class="modal" id="atualizarModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="modal">
+            <div class="modal-header">
+                <h5 class="modal-title">Atualizar Dados do Paciente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <input class="form-control" type="text" id="nome-completo-input"placeholder="Nome Completo">
+                      <input class="form-control" type="text" id="celular-input"placeholder="Celular">
+                      <input class="form-control" type="text" id="cpf-input"placeholder="CPF">
+                      <input class="form-control" type="text" id="rg-input"placeholder="RG">
+                      <input class="form-control" type="date" id="data-nasc-input" placeholder="Data de Nascimento">
+                      <h6>Sexo:</h6>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Feminino">
+                        <label class="form-check-label" for="inlineRadio1">Feminino</label>
+                      </div>
+                      <div class="form-check form-check-inline">  
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Masculino">
+                        <label class="form-check-label" for="inlineRadio2">Masculino</label>
+                      </div>
+                      </div>
+                    <h6 class="observacoes">Observações:</h6>
+                    <label for="message-text"></label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                    <div class="modal-footer">
+                      
+                      <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Atualizar</button>
+                  </div>'
+                </form>
+            </div>
+        </div>
+    </div>   
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="excluirModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Paciente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://img.icons8.com/emoji/60/000000/warning-emoji.png"/>
+        <h6>Você tem certeza que quer excluir este paciente?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="button-excluir">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
