@@ -47,9 +47,9 @@ header > h1{
 nav{
     position: relative;
     margin: 0%;
-    height: 50px;
+    height: 45px;
     background-color: #173C6D;
-    padding: 19px;
+    padding: 10px;
     justify-content: space-between;
     font-size: 0;
     box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
@@ -83,32 +83,32 @@ a:nth-child(1){
 }
 nav .start-pacientes, a:nth-child(1):hover~.animation{
     width: 140px;
-    left: 20px;
+    left: 10px;
 }
  
 a:nth-child(2){
-    width: 140px;
+    width: 160px;
 }
 nav .start-agendamento, a:nth-child(2):hover~.animation{
     width: 140px;
-    left: 161px;
+    left: 160px;
 }
  
 a:nth-child(3){
-    width: 140px;
+    width: 160px;
 }
 
 nav .start-medicamentos, a:nth-child(3):hover~.animation{
     width: 140px;
-    left: 303px;
+    left: 320px;
 }
  
 a:nth-child(4){
-    width: 162px;
+    width: 160px;
 }
 nav .start-notificações, a:nth-child(4):hover~.animation{
-    width: 162px;
-    left: 440px;
+    width: 142px;
+    left: 480px;
 }
 
 a:nth-child(5){
@@ -117,7 +117,7 @@ a:nth-child(5){
 
 nav .start-perfil, a:nth-child(5):hover~.animation{
     width: 90px;
-    left: 600px;
+    left: 630px;
 }
  
 nav > a:hover{
@@ -183,10 +183,24 @@ h2, .o-pacientes .cadastrar{
     font-family: Roboto;
     margin-top: 5px;
   }
-  #nome-completo-input, #celular-input, #cpf-input,  #rg-input, #data-nasc-input{
+  #nome-completo-input, #celular-input, #cpf-input,  #rg-input{
     border-radius: 10px;
     border-color: #57CC97;
     width: 380px;
+    height: 40px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 10px;
+    display: inline-block;    
+  }
+
+  #data-nasc-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 250px;
     height: 45px;
     border-width: 3px;
     text-align: left;
@@ -194,8 +208,7 @@ h2, .o-pacientes .cadastrar{
     font-size: 16px;
     font-family: Roboto;
     margin-top: 10px;
-    display: inline-block;
-    
+    display: inline-block;  
   }
 
 #cadastrar-button{
@@ -236,11 +249,11 @@ h2, .o-pacientes .cadastrar{
   }
 
 /* Listar - Model */
-#header-listar{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
 
+#header-listar-modal{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+}
 
   #busca{
     padding-bottom: 30px;
@@ -263,7 +276,31 @@ h2, .o-pacientes .cadastrar{
 #busca input:focus{
     outline: none;
 }
+.listagem{
+    display: grid;
+    grid-template-columns: 1.3fr 0.6fr 0.6fr 0.2fr 0.2fr;
+}
 
+#titulo-listagem{
+    background: rgba(160, 238, 202, 0.3);
+    border-radius: 5px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+*/Outras definições/
 
   h5{
     font-weight: bold;
@@ -279,7 +316,7 @@ h2, .o-pacientes .cadastrar{
     background: #E5E5E5;
     color: #173C6D;
 }
-#button-cadastrar{
+#button-cadastrar, #button-listar{
     background: #173C6D;
     color:white;
 }
@@ -288,7 +325,11 @@ h6{
     color: black;
     margin: 10px;
 }
-h7{
-    margin: 5px;
-    color: black;
+
+.observacoes{
+    padding-top: 10px;
+}
+#button-excluir{
+    background: #173C6D;
+    color:white;  
 }

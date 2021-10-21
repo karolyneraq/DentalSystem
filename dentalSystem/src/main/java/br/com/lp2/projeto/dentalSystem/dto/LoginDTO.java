@@ -1,9 +1,12 @@
 package br.com.lp2.projeto.dentalSystem.dto;
 
+import java.util.Collection;
+
+
 import lombok.Data;
 
 @Data
-public class LoginDTO {
+public class LoginDTO{
 
 	private String id;
 	private String nomeDentista;
@@ -51,7 +54,5 @@ public class LoginDTO {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
-	
+
 }

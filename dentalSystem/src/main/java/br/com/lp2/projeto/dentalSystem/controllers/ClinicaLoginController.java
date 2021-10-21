@@ -12,14 +12,15 @@ import br.com.lp2.projeto.dentalSystem.service.login.DentalSystemServiceLogin;
 
 @Controller
 public class ClinicaLoginController {
-
+/*
 	@Autowired
     private DentalSystemServiceLogin service;
 
 	 @GetMapping("/clinicalogin")
 		public String login(Model model) {
 		 model.addAttribute("clinicalogin", new LoginDTO());
-		 return "perfilPaciente/perfil_paciente";
+		 return "clinica/login";
 	}
-	 
+	
+*/
 }

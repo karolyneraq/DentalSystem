@@ -41,7 +41,6 @@ public class DentalSystemServiceImplLogin implements DentalSystemServiceLogin {
         }
     }
 
-
     @Override
     public Boolean add(LoginDTO post) {
         Map<String, Object> docData = getDocData(post);

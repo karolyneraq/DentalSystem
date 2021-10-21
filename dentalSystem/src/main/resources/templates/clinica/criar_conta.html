@@ -37,26 +37,25 @@
             
             
             <form th:action="@{/clinicaadd}"  th:object="${clinica}" method="POST">
-             <div class="form-group">
-             
-            <p class="o-nomeDentista">Seu nome</p>
-            <input class="o-nomeDentista" type="text" th:field="*{nomeDentista}" placeholder="Seu nome">
-            
-             <p class="o-nomeClinica">Nome da clínica</p>
-            <input class="o-nomeClinica" type="text" th:field="*{nomeClinica}" placeholder="Nome da clínica">
-            
-            <p class="o-email">Seu endereço de email</p>
-            <input class="email" type="text" th:field="*{email}" placeholder="Email">
-            
-            <p class="o-senha">Digite uma senha</p>
-            <input class="senha"  type="text" th:field="*{senha}" placeholder="Senha">
+                <div class="formulario">
+                    <p class="o-nomeDentista">Seu nome</p>
+                    <input class="form-control" id="nomeDentista" type="text" th:field="*{nomeDentista}" placeholder="Seu nome">
+                    
+                    <p class="o-nomeClinica">Nome da clínica</p>
+                    <input class="form-control" id="nomeClinica" type="text" th:field="*{nomeClinica}" placeholder="Nome da clínica">
+                    
+                    <p class="o-email">Seu endereço de email</p>
+                    <input class="form-control" id="email" type="email" th:field="*{email}" placeholder="Email">
+                    
+                    <p class="o-senha">Digite uma senha</p>
+                    <input class="form-control"  id="senha" type="password" th:field="*{senha}" placeholder="Senha">
 
-            <div class="bt">
-                <button class="cadastrar">Criar conta</button>
-            </div>
-             </form>
-            <p class="o-termo">Ao criar uma conta, você concorda com os nossos <a href="url">Termos e Condições</a></p>
-           
+                    <div class="bt">
+                        <button class="cadastrar">Criar conta</button>
+                    </div>
+                    <p class="o-termo">Ao criar uma conta, você concorda com os nossos <a href="url">Termos e Condições</a></p>
+                </div>
+            </form>
         </main>
     </div>
 </body>

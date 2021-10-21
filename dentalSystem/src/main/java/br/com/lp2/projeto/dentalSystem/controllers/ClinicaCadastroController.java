@@ -17,8 +17,14 @@ public class ClinicaCadastroController {
 	@Autowired
     private DentalSystemServiceLogin service;
 
+	@GetMapping("/clinicalogin")
+	public String login(Model model) {
+	 model.addAttribute("clinicalogin", new LoginDTO());
+	 return "clinica/login";
+	}
+	
 	 @GetMapping("/clinicacadastro")
-		public String login(Model model) {
+		public String cadastro(Model model) {
 		 model.addAttribute("clinica", new LoginDTO());
 		 return "clinica/criar_conta";
 	}
@@ -26,8 +32,11 @@ public class ClinicaCadastroController {
 	 @PostMapping("/clinicaadd")
 		public String greetingSubmit(@ModelAttribute LoginDTO clinica, Model model) {
 		 service.add(clinica);
-		 return "paciente/clinicaOK";
+		 return "redirect:/pacientecadastro";
 		 }
-	
-   
-}
+	 
+	 @GetMapping("/clinicalist")
+	    public ResponseEntity list(){
+	        return new ResponseEntity(service.list(), HttpStatus.OK);
+	    }
+	}
