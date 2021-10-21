@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="agendamento.css">
+    <!-- Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>DentalSystem</h1>
+    </header>
+    <nav>
+        <a href="menu_pacientes.html" style="text-decoration:none">Pacientes</a>
+        <a href="agendamento.html" style="text-decoration:none">Agendamento</a>
+        <a href="#" style="text-decoration:none">Medicamentos</a>
+        <a href="#" style="text-decoration:none">Notificações</a>
+        <a href="#" style="text-decoration:none">Perfil</a>
+        <div class="animation start-pacientes"></div>
+    </nav>
+    <main class="o-main">
+        <form id="formulario">
+            <footer class="o-footer">
+                <div class="container" id="dados-agendamento">
+                    <div class="row g-4">
+                        <div class="col-6" id="informacoes-agendamento">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="titulo">
+                                        <h2>Agendar Consulta</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="campos-informacoes-agendamento">
+                                    <div class="campos-1">
+                                        <div class="form-group">
+                                            <p class="o-pacientes">Paciente:</p>
+                                            <input class="form-control" type="text" id="paciente-input" placeholder=" Insira o nome do paciente" aria-label="Search"
+                                            aria-describedby="search-addon"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="o-horario"> Dentista:</p>
+                                            <input class="form-control" type="text" id="dentista-input" placeholder=" Insira o nome do dentista" aria-label="Search"
+                                            aria-describedby="search-addon"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="o-data"> Data:</p>
+                                            <input class="form-control" type="date" id="data-input"  aria-label="Search"
+                                            aria-describedby="search-addon"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="o-horario"> Horário:</p>
+                                            <input class="form-control" type="time" id="horario-input" aria-label="Search"
+                                            aria-describedby="search-addon"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-agendar" id="button-agendar">Agendar</button>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                        
+        </footer>
+        </form>
+    </main>
+    
+</body>
+</html>
