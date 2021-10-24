@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receita</title>
+
+  <!-- Fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+ <!--BootStrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href= "receita.css">
+
+ <!--Script-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <h1>DentalSystem</h1>
+  </header>
+
+
+  <nav>
+    <a href="menu_pacientes.html" style="text-decoration:none">Pacientes</a>
+    <a href="agendamento.html" style="text-decoration:none">Agendamento</a>
+    <a href="#" style="text-decoration:none">Medicamentos</a>
+    <a href="#" style="text-decoration:none">Notificações</a>
+    <a href="#" style="text-decoration:none">Perfil</a>
+    <div class="animation start-pacientes"></div>
+  </nav>
+
+
+  <main class="o-main">
+    
+    <div class="paciente">
+      <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#1abc9c" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+      </div>
+      <div class="paciente-escolhido">
+          <h3>Maria Alencar Lima</h3>
+          <h4>Nº Prontuário: 02</h4>
+      </div>
+      <div class="escolher-paciente">
+          <h3>Maria Alencar Lima</h3>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <div class="container" id="dados-exclusao">
+        <div class="row g-4">
+            <div class="col-6" id="informacoes-exclusao">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="titulo">
+                            <h2>Receituário</h2>
+                        </div>
+                    </div>
+                    <div class="card-body" id="campos-informacoes-exclusao">
+
+                      <form>
+
+                        <label for="profissional-input"><p class="o-profissional">Profissional:</p></label>
+                        <input class="form-control" type="text" id="profissional-input"placeholder="Profissional">
+
+                        <label for="paciente-input"><p class="o-paciente">Paciente:</p></label>
+                        <input class="form-control" type="text" id="paciente-input"placeholder="Paciente">
+
+                        <label for="data-input"><p class="o-data">Data:</p></label>
+                        <input class="form-control" type="date" id="data-input"placeholder="Data">
+
+
+                        <label for="medicamento-input" class="form-label"><p class="o-medicamento">Medicamento:</p></label>
+                        <input class="form-control" list="datalistOptions" id="medicamento-input" placeholder="Digite ou escolha um medicamento...">
+                        <datalist id="datalistOptions">
+                          <option value="Criar novo medicamento">
+                          <option value="New York">
+                          <option value="Seattle">
+                          <option value="Los Angeles">
+                          <option value="Chicago">
+                        </datalist>
+
+                        <div class="medicamento-qtd-medida">
+                          <label for="qtd-input"><p class="o-quantidade">Quantidade:</p></label>
+                          <input class="form-control" type="number" id="qtd-input" min="0" placeholder="Qtd">
+
+                          <label for="medida-input" class="o-medida"><p>Medida:</p></label>
+                          <select id="medida-input">
+                            <option selected>Escolha uma medida</option>
+                            <option value="1">Caixa</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+
+                        <label for="message-text"><h6 class="prescricao">Prescrição:</h6></label>
+                        <textarea class="form-control" id="message-text"></textarea>
+
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Atualizar</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+  </footer>   
+</body>
+</html>
