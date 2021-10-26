@@ -26,7 +26,7 @@ public class MedicamentoController {
         return new ResponseEntity(service.add(post), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/{id}/update")
+    @PostMapping(value = "/{id}/update")
     public ResponseEntity edit(@PathVariable(value = "id") String id, @RequestBody MedicamentoDTO post){
         return new ResponseEntity(service.edit(id,post), HttpStatus.OK);
     }

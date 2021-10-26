@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+body{
+    font-family:  Source Serif Pro;
+    border: 0;
+    overflow: visible;
+    background-color: #F2F2F2;
+    margin-bottom: 170px;
+}
+h2, .o-pacientes .cadastrar{
+    font-family: Roboto, sans-serif;
+    color: black;
+    font-weight:lighter;
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+h3{
+    color: black;
+    font-weight:lighter;
+    font-family: Roboto;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .div_principal{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height:100%;
+    width:100%;
+  }
+  
+  .o-main{
+  grid-area:main;
+  background-color: #F2F2F2;
+  }
+  
+  .row {
+    margin: 0;
+  }
+  .container {
+    padding: 70px 0;
+  }
+  p, li{
+    color: white;
+    font-size: 14px;
+  }
+  
+
+/* Barra de navegação */
+h1{
+    font-family: Source Serif Pro;
+    font-size: 32px;
+    color: white;
+    padding-top: 5px;
+}
+header{
+    background-color: #173C6D;
+    padding: 40px;
+    margin: 0%;
+   
+}
+  
+header > h1{
+    margin: 0%;
+    text-align: left;
+    color: white;
+    font-size: 50px;
+  
+}
+  
+nav{
+    position: relative;
+    margin: 0%;
+    height: 45px;
+    background-color: #173C6D;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
+}
+  
+nav > a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 5px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+  nav .animation{
+    position:absolute;
+    height: 5px;
+    top: 40px;
+    z-index: 0;
+    background: #1abc9c;
+    width: 0px;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+  
+  }
+  a:nth-child(1){
+    width: 140px;
+  }
+  nav .start-agendamento, a:nth-child(1):hover~.animation{
+    width: 140px;
+    left: 10px;
+  }
+  
+  a:nth-child(2){
+    width: 160px;
+  }
+  nav .start-pacientes, a:nth-child(2):hover~.animation{
+    width: 140px;
+    left: 160px;
+  }
+  
+  a:nth-child(3){
+    width: 160px;
+  }
+  
+  nav .start-medicamentos, a:nth-child(3):hover~.animation{
+    width: 140px;
+    left: 320px;
+  }
+  
+  a:nth-child(4){
+    width: 160px;
+  }
+  nav .start-notificações, a:nth-child(4):hover~.animation{
+    width: 142px;
+    left: 480px;
+  }
+  
+  a:nth-child(5){
+    width: 90px;
+  }
+  
+  nav .start-perfil, a:nth-child(5):hover~.animation{
+    width: 90px;
+    left: 630px;
+  }
+  
+  nav > a:hover{
+    text-decoration: underline;
+    color: white;
+  }
+  * {
+    list-style:none; 
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* card*/
+
+.o-footer{
+    background-color: #F2F2F2;
+    font-family: Roboto;
+    width: 900px;
+    margin-left: 200px;
+    margin-top: 15px;
+    height: max-content;
+}
+.card-header{
+    background-color: #A0EECA;
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+    width: 900px;
+    height:max-content;
+}
+
+.titulo{
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.campos{
+    text-align: center;
+}
+
+.campos-texto{
+    font-weight: bold;
+}
+
+#dados-agendamento{
+    padding-top: 0px;
+}
+
+#campos-informacoes-agendamento{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 20px;
+}
+
+.col-6{
+    padding-left: 0px;
+}
+
+.card{
+    height:500px;
+    width: 907px;
+    background-color: white;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 8px;
+    border: 4px solid #57cc97;
+}
+
+
+.o-pacientes, .o-data, .o-horario{
+    font-size: 20px;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    
+    
+}
+
+#paciente-input, #dentista-input{
+    
+    border-radius: 8px;
+    border: 4px solid #57cc97;
+    width: 400px;
+    height: 45px;
+    border-width: 4px;
+    text-align: left;
+    padding: 20px;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 5px;
+    
+  }
+  #data-input, #horario-input{
+    border-radius: 8px;
+    border: 4px solid #57cc97;
+    width: 200px;
+    height: 45px;
+    border-width: 4px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 10px;
+    display: inline-block; 
+  }
+  #button-agendar{
+    background: #173C6D;
+    color:white;
+    margin-left: 600px;
+    border-radius: 10px;
+    width:200px;
+    height: 45px;
+    font-size: 18px;
+    align-self: auto;
+  }

@@ -32,7 +32,7 @@ public class ClinicaCadastroController {
 	 @PostMapping("/clinicaadd")
 		public String greetingSubmit(@ModelAttribute LoginDTO clinica, Model model) {
 		 service.add(clinica);
-		 return "redirect:/pacientecadastro";
+		 return "redirect:/pacienteCadastro";
 		 }
 	 
 	 @GetMapping("/clinicalist")

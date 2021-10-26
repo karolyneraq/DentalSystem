@@ -3,19 +3,26 @@ package br.com.lp2.projeto.dentalSystem.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.lp2.projeto.dentalSystem.dto.AgendamentoDTO;
+import br.com.lp2.projeto.dentalSystem.dto.PacienteDTO;
 import br.com.lp2.projeto.dentalSystem.service.agendamento.DentalSystemServiceAgendamento;
 
 
 
-@RestController
-@RequestMapping("/Agendamento")
+@Controller
 public class AgendamentoController {
 
 	@Autowired
     private DentalSystemServiceAgendamento service;
+	
+	@GetMapping("/fazeragendamento")
+	public String login(Model model) {
+		return "paciente/agendamento";
+	}
 
     @GetMapping(value = "/list")
     public ResponseEntity list(){

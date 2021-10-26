@@ -24,6 +24,8 @@ public class PacienteDTO {
 		this.rg = rg;
 		this.sexo = sexo;
 	}
+	
+
 
 	public String getId() {
 		return id;

@@ -6,7 +6,7 @@ import java.util.List;
 public interface DentalSystemServicePaciente {
 
     List<PacienteDTO> list();
-
+    
     Boolean add(PacienteDTO post);
 
     Boolean edit(String id,PacienteDTO post);
