@@ -10,6 +10,8 @@ body{
 }
 .container {
     padding: 70px 0;
+    padding-top: 0px;
+    min-width: 600px;
 }
  
 /* Barra de navegação */
@@ -23,6 +25,7 @@ h1{
 body{
     background-color: white; 
     margin-bottom: 170px;
+    min-width: 1000px;
 }
  
 header{
@@ -174,28 +177,38 @@ h4{
 }
 
 .escolher-paciente{
-    padding-top: 40px;
+    padding-top: 10px;
     padding-bottom: 0px;
 }
 
-.escolher-paciente::after{
-    content: "";
-    background: url("arrow-down.svg");
-    background-size: contain;
+.nome-paciente{
+    padding-left: 50px;
+}
+
+.escolher-paciente>select{
+    background-image: url("arrow-down.svg") #FFFFFF;
     background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 7px;
+    padding-right: 1rem;
+}
 
-    position: absolute;
-    height: 100%;
-    width: 30px;
-    right: 10px;
-    top: 235px;
-
-    transition: all 0.4s;
+#opcoes-paciente{
+    border-radius: 10px;
+    background-color: #173C6D;
+    color: white;
+    width: fit-content;
+    height: 40px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
 
 .o-footer{
     font-family: Roboto;
-    padding: 50px;
+    min-width: 600px;
 }
 
 
@@ -265,8 +278,9 @@ h2, .cadastrar{
     padding-left: 0px;
 }
 .card{
-    height:850px;
+    height:760px;
     width: 600px;
+    min-width: 600px;
     background-color: white;
     margin-top: 0px;
     border-radius: 8px;
@@ -288,9 +302,6 @@ h2, .cadastrar{
     font-weight: bold;
 }
 
-#dados-exclusao{
-    padding-top: 0px;
-}
 #formulario{
     position: absolute;
     top: 55%;
@@ -311,20 +322,6 @@ h2, .cadastrar{
     border-width: 3px;
     text-align: left;
     font-size: 16px;
-  }
-
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("arrow-down.svg");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 7px;
-    padding-right: 2rem;
-  }
-
-  select:hover{
-    border-color: black;
   }
 
   #medicamento-input{
@@ -363,6 +360,16 @@ h2, .cadastrar{
     padding-left: 10px;
   }
 
+  #medida-input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 7px;
+    padding-right: 2rem;
+  }
+
   .medicamento-qtd-medida{
       padding-top: 10px;
       display: flex;
@@ -370,7 +377,7 @@ h2, .cadastrar{
   }
 
   .o-medida{
-      padding-left: 50px;
+      padding-left: 20px;
   }
 
   #qtd-input{
@@ -384,12 +391,6 @@ h2, .cadastrar{
     font-size: 16px;
     margin-top: 10px;
   }
-
-  .o-paciente, .o-data, .o-profissional, .o-medicamento, .o-quantidade, .o-medida, .prescricao{
-    font-size: 16px;
-    padding-top: 10px;
-    font-weight: bold;
-}
 
   #message-text{
     border-style: solid;
@@ -418,4 +419,50 @@ h6{
     display: inline-block;
     color: black;
     margin: 10px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: 520px 1px;
+}
+
+.apagar-medicamento{
+    padding-top: 10px;
+}
+
+.form-group.floating>label {
+    bottom: 34px;
+    left: 8px;
+    position: relative;
+    background-color: white;
+    color: #686868da;
+    padding: 3px 5px 0px 5px;
+    font-size: 16px;
+    transition: 0.1s;
+    pointer-events: none;
+    transform-origin: bottom left;
+}
+
+.form-control.floating:focus~label{
+    transform: translate(1px,-85%) scale(0.80);
+    color: #173C6D;
+    background-color: white;
+}
+
+.form-control.floating:valid~label{
+    transform-origin: bottom left;
+    transform: translate(1px,-85%) scale(0.80);
+    opacity: .8;
 }
