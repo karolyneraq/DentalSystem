@@ -178,19 +178,15 @@ h4{
 
 .escolher-paciente{
     padding-top: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
 }
 
 .nome-paciente{
-    padding-left: 50px;
+    padding-left: 10px;
 }
 
 .escolher-paciente>select{
-    background-image: url("arrow-down.svg") #FFFFFF;
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 7px;
-    padding-right: 1rem;
+    color: white;
 }
 
 #opcoes-paciente{
