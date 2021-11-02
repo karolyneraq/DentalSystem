@@ -22,16 +22,14 @@ public class PacienteController {
 	
     @Autowired 
     private DentalSystemServicePaciente service;
-    private String idTemporario = null;
     private int dP;
     
     
     
     @GetMapping("/pacientelist")
-    public  ModelAndView list(){
-    	ModelAndView mv = new ModelAndView("paciente/pacientes");
-    	mv.addObject("pacientelista", service.list());
-    	return mv;
+    public  String list(Model model){
+    	model.addAttribute("pacientelista", service.list());
+    	return "paciente/pacientes";
     }
     
     
@@ -47,63 +45,49 @@ public class PacienteController {
 		  service.add(paciente);
 		  model.addAttribute("paciente", paciente);
 		  //Faltando o tratamento de erro do firebase
-		  return "perfilPaciente/perfil_paciente";
+		  return "paciente/perfil_paciente";
 	  }
     
     @GetMapping("/pacienteEditar/{id}")
 	public String alterarPaciente(@PathVariable(value = "id") String id, Model model) {
-    	 model.addAttribute("paciente", new PacienteDTO());
-		 model.addAttribute("pacienteDados", service.list());
-		 dP= buscarID(id);
-		 model.addAttribute("pacienteDados", service.list().get(dP));
-    		return "paciente/atualizar_paciente";
+    	dP= buscarID(id);
+    	PacienteDTO paciente = service.list().get(dP);
+    	model.addAttribute("paciente", paciente);
+    	return "paciente/atualizar_paciente";
 	}
     
-    
-    @GetMapping("/pacienteAtualizar")
-    public  ModelAndView dadosAtualizar(){
-    	ModelAndView mv = new ModelAndView("paciente/atualizar_paciente");
-    	mv.addObject("pacienteDados", service.list().get(dP));
-    	
-    	return mv;
-    }
-    
-    @PutMapping("/pacienteUpdates")
-	public String editSubmit(@ModelAttribute PacienteDTO paciente, Model model ) {
-    	  service.edit(idTemporario,paciente);
-		  model.addAttribute("paciente", paciente);
-		  //Faltando o tratamento de erro do firebase
-		  return "perfilPaciente/perfil_paciente";
+    @PostMapping("/pacienteUpdates/{id}")
+	public String editSubmit(@PathVariable(value = "id") String id, @ModelAttribute PacienteDTO paciente ) {
+    	  service.edit(id,paciente);
+		  return  "redirect:/pacienteCadastro";
     }
     
     @GetMapping("/pacienteDeletar/{id}")
-   	public String deletePaciente(@PathVariable(value = "id") String id, Model model) {
-   		 dP= buscarID(id);
-   		idTemporario=id;
-   		 model.addAttribute("pacienteExcluindo", service.list().get(dP));
-       		return "paciente/excluir_paciente";
-   	}
+	public String deletePaciente(@PathVariable(value = "id") String id, Model model) {
+    	dP= buscarID(id);
+    	PacienteDTO paciente = service.list().get(dP);
+    	model.addAttribute("paciente", paciente);
+    	return "paciente/excluir_paciente";
+	}
     
-    @GetMapping("/pacienteDelete")
-    public  ModelAndView dadosDelete(){
-    	ModelAndView mv = new ModelAndView("paciente/excluir_paciente");
-    	mv.addObject("pacienteExcluindo", service.list().get(dP));
-    	return mv;
-    }
-    
-    @DeleteMapping("/pacienteExcluir")
-	public String deleteSubmit() {
-    	  service.delete(idTemporario);
+    @GetMapping("/pacienteExcluir/{id}")
+	public String deleteSubmit(@PathVariable(value = "id") String id) {
+    	  service.delete(id);
 		  return "redirect:/pacienteCadastro";
     }
     
-    
+    @GetMapping("/pacientePerfil/{id}")
+	public String pefilPaciente(@PathVariable(value = "id") String id, Model model) {
+    	dP= buscarID(id);
+    	PacienteDTO paciente = service.list().get(dP);
+    	model.addAttribute("paciente", paciente);
+    	return "paciente/perfil_paciente";
+	}
     public int buscarID(String id) {
     	boolean verificar;
     	int achou=0;
     	for(int i=0; i<service.list().size(); i++) {
     		verificar = service.list().get(i).getId().contains(id);
-    		System.out.println(verificar);
     		if(verificar==true) {
     			achou=i;
     		}

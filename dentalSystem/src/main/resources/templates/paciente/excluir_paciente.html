@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Paciente</title>
 
-     <!-- Fonte-->
+    <!-- Fonte-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
  
     <!--BootStrap-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-     <link rel="stylesheet" href= "excluir_paciente">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="excluir_paciente.css">
  
     <!--Script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -50,27 +50,27 @@
                                     <h2>Excluir Paciente</h2>
                                 </div>
                             </div>
-                            <div class="card-body" id="campos-informacoes-exclusao" th:each="pacienteDeletar: ${pacienteExcluindo}">
+                            <div class="card-body" id="campos-informacoes-exclusao">
                                 <div class="campos-1">
                                     <div class="form-group">
                                         <p class="o-paciente">Paciente:</p>
-                                        <h3><span th:text= "${pacienteDeletar.nome}"></span></h3>
+                                        <h3><span th:text= "${paciente.nome}"></span></h3>
                                     </div>
                                     <div class="form-group">
                                         <p class="o-cpf"> CPF:</p>
-                                        <h3><span th:text="${pacienteDeletar.cpf}"></span></h3>
+                                        <h3><span th:text="${paciente.cpf}"></span></h3>
                                     </div>
                                     <div class="form-group">
                                         <p class="o-celular"> Celular:</p>
-                                        <h3><span th:text="${pacienteDeletar.celular}"></span></h3>
+                                        <h3><span th:text="${paciente.celular}"></span></h3>
                                     </div>
                                     <div class="form-group">
                                         <p class="o-dataNasc"> Data de Nascimento:</p>
-                                       <h3><span th:text= "${pacienteDeletar.dataNascimento}"></span></h3>
+                                       <h3><span th:text= "${paciente.dataNascimento}"></span></h3>
                                     </div>
                                     <div class="form-group">
                                         <p class="o-sexo"> Sexo:</p>
-                                       <h3><span th:text="${pacienteDeletar.sexo}"></span></h3>
+                                       <h3><span th:text="${paciente.sexo}"></span></h3>
                                     </div>
                                     <button type="button" class="btn btn-excluir" data-toggle="modal"  data-target="#excluirModal"  onclick="loadModalEcluir()" id="button-excluir">Excluir</button>
                                  </div>
@@ -92,7 +92,7 @@
               <h6>Você tem certeza que quer excluir este paciente?</h6>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="button-excluirmodal">Excluir</button>
+              <a th:href="@{/pacienteExcluir/{id}(id = ${paciente.id})}"> <button type="button" class="btn btn-primary" id="button-excluirmodal">Excluir</button></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="button-cancelar">Cancelar</button>
             </div>
           </div>

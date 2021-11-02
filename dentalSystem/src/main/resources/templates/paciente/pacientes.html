@@ -103,7 +103,7 @@
         				<th><h6>Celular</h6></th>
       				</tr>
 	      			<tr class="listagem" id="informacoes-listagem" th:each="pacientelist : ${pacientelista}">
-				        <th><h6><a href="${pacientelist.nome}"><span th:text="${pacientelist.nome}"></span></a></h6></th>
+				        <th><h6><a th:href="@{/pacientePerfil/{id}(id = ${pacientelist.id})}"><span th:text="${pacientelist.nome}"></span></a></h6></th>
        					<th><h6><span th:text="${pacientelist.cpf}"></span></h6></th>
         				<th><h6><span th:text="${pacientelist.celular}"></span></h6></th>
         				<th class="btn-options">
