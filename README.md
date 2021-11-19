@@ -1,7 +1,7 @@
 # DentalSystem
 Sistema para Gerenciamento de Consultório Odontológico. 
 
-Equipe
+### Equipe
 
 Andressa Verçosa Siqueira
 
@@ -11,8 +11,21 @@ Giovana Vitória dos Santos Lima
 
 Raquel Karolyne Carlotto Santos
 
+## Recursos do sistema web
+- Cadastrar pacientes;
+- Cadastrar dentistas;
+- Cadastrar medicamentos;
+- Agendamento de consultas;
+- Gerar histórico do paciente;
+- Gerar receituário;
+- Gerar atestados;
+- Gerar a solicitação de exame;
+- Gerar encaminhamento;
+- Registrar a ficha de atendimento de consultas de paciente;
+- Incluir arquivos de imagens, textos, planilhas no prontuário;
+- Enviar da notificação da prescrição por e-mail ou SMS para os pacientes.
 
-# Problemas com o git
+## Problemas com o git
 Não use git init
 
 Clone o repositório (git clone https://github.com/karolyneraq/DentalSystem) primeiro.
@@ -33,5 +46,6 @@ Para enviar as atualizações pro repositório:
 
 6º verifique se as alterações foram para o repositório no github
 
-# Pastas
-A pasta de telas está em dentalSystem/target/classes/static/Telas
+## Arquivos
+Os arquivos das telas estão na brench teste.
+E o projeto completo está na main.
