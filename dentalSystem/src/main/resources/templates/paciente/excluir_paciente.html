@@ -32,8 +32,8 @@
     </header>
     <nav>
        <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
-       <a href="/fazeragendamento" style="text-decoration:none">Agendamento</a>
-       <a href="#" style="text-decoration:none">Medicamentos</a>
+       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
+       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
        <a href="#" style="text-decoration:none">Notificações</a>
        <a href="#" style="text-decoration:none">Perfil</a>
        <div class="animation start-pacientes"></div>
@@ -53,24 +53,34 @@
                             <div class="card-body" id="campos-informacoes-exclusao">
                                 <div class="campos-1">
                                     <div class="form-group">
-                                        <p class="o-paciente">Paciente:</p>
-                                        <h3><span th:text= "${paciente.nome}"></span></h3>
+                                        <p class="o-paciente">Paciente</p>
+                                        <div class="caixa" id="nome">
+                                            <h3><span th:text= "${paciente.nome}"></span></h3>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <p class="o-cpf"> CPF:</p>
-                                        <h3><span th:text="${paciente.cpf}"></span></h3>
+                                        <p class="o-cpf"> CPF</p>
+                                        <div class="caixa" id="cpf">
+                                            <h3><span th:text="${paciente.cpf}"></span></h3>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <p class="o-celular"> Celular:</p>
-                                        <h3><span th:text="${paciente.celular}"></span></h3>
+                                        <p class="o-celular"> Celular</p>
+                                        <div class="caixa" id="cpf">
+                                            <h3><span th:text="${paciente.celular}"></span></h3>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <p class="o-dataNasc"> Data de Nascimento:</p>
-                                       <h3><span th:text= "${paciente.dataNascimento}"></span></h3>
+                                        <p class="o-dataNasc"> Data de Nascimento</p>
+                                        <div class="caixa" id="data">
+                                            <h3><span th:text= "${paciente.dataNascimento}"></span></h3>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <p class="o-sexo"> Sexo:</p>
-                                       <h3><span th:text="${paciente.sexo}"></span></h3>
+                                        <p class="o-sexo"> Sexo</p>
+                                        <div class="caixa" id="data">
+                                            <h3><span th:text="${paciente.sexo}"></span></h3>
+                                        </div>
                                     </div>
                                     <button type="button" class="btn btn-excluir" data-toggle="modal"  data-target="#excluirModal"  onclick="loadModalEcluir()" id="button-excluir">Excluir</button>
                                  </div>
@@ -92,13 +102,12 @@
               <h6>Você tem certeza que quer excluir este paciente?</h6>
             </div>
             <div class="modal-footer">
-              <a th:href="@{/pacienteExcluir/{id}(id = ${paciente.id})}"> <button type="button" class="btn btn-primary" id="button-excluirmodal">Excluir</button></a>
+                <a th:href="@{/pacienteExcluir(id=${paciente.id})}"> <button type="button" class="btn btn-primary" id="button-excluirmodal">Excluir</button></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="button-cancelar">Cancelar</button>
             </div>
           </div>
         </div>
     </div>                                 
 </main>
-    
 </body>
 </html>

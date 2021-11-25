@@ -16,8 +16,7 @@ public class DentistaDTO {
 	private String celular;
 	
 	
-	public DentistaDTO(String id, String nome, String cpf, String dataNascimento, String cRO, String especialidade,
-			String email, String senha, String celular) {
+	public DentistaDTO() {
 		super();
 		this.id = id;
 		this.nome = nome;

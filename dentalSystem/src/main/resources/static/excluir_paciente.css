@@ -97,6 +97,7 @@ nav > a:hover{
     color: white;
 }
 
+
 * {
 
     list-style:none; 
@@ -117,6 +118,7 @@ body{
     overflow: visible;
     margin-bottom: 170px;
     background-color: #F2F2F2;
+    min-width: 1000px;
 }
 
 p, li{
@@ -132,7 +134,7 @@ h1{
 }
 h2, .cadastrar{
     font-family: Roboto, sans-serif;
-    color: black;
+    color: #173C6D;
     font-weight:lighter;
     text-align: center;
     margin: 5px;
@@ -143,11 +145,11 @@ h2, .cadastrar{
 }
 
 h3{
-    color: black;
+    color: rgb(60, 60, 60);
     font-weight:lighter;
-    font-family: Roboto;
-    margin-top: 20px;
-    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    padding-top:8px;
+    font-size: 16px;
     margin-left: 10px;
     display: inline-block;   
 }
@@ -205,7 +207,7 @@ h6{
     padding-left: 0px;
 }
 .card{
-    height:400px;
+    height:auto;
     width: 600px;
     background-color: white;
     margin-left: 300px;
@@ -231,20 +233,20 @@ h6{
 }
 .o-paciente, .o-cpf, .o-celular, .o-dataNasc, .o-sexo{
     font-family: Roboto, sans-serif;
-    color: black;
+    color: rgb(32, 32, 32);
     font-weight:lighter;
     text-align: left;
-    margin: 5px;
+    margin: 2px;
     margin-left: 10px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     display: inline-block;    
 }
 
 #button-excluir{
     background: #173C6D;
     color:white;
-    margin-left: 400px;
+    margin-left: 450px;
     border-radius: 10px;
     width:100px;
     height: 40px;
@@ -272,10 +274,32 @@ h6{
 #button-excluirmodal{
     background: #173C6D;
     color:white;  
+    position: relative;
+    float: right;
 }
 
 #button-cancelar{
     background: #E5E5E5;
     color: #173C6D;
-    display: inline-block; 
+}
+
+.caixa{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #57CC97;
+    height: 40px;
+    border-width: 3px;
+    margin-left: 5px;
+}
+
+#cpf{
+    width: 380px;
+}
+
+#nome{
+    width: 450px;
+}
+
+#data{
+    width: 250px;
 }

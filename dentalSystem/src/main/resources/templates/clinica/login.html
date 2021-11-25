@@ -42,13 +42,13 @@
            			 You have been logged out.
        				 </div>
                     
-					<form th:action="@{/clinicabusca}"  th:object="${clinicalogin}" method="POST">
-                    <input class="email" type="text" th:field="*{email}" placeholder="Email">
+					<form th:action="@{/clinicalogin}" th:object="${clinicalogin}" method="POST">
+                    <input class="email" type="text" name="username" th:field="*{email}" placeholder="Email">
 
-                   <input class="senha"  type="password" th:field="*{senha}" placeholder="Senha">
+                   <input class="senha" type="password" name="password" th:field="*{senha}" placeholder="Senha">
 
                     <div class="bt">
-                        <button class="cadastrar">Login</button>
+                        <button type="submit" class="cadastrar">Login</button>
                     </div>
 					</form>
 					<a href="/clinicacadastro"> Registre-se gratuitamente </a>

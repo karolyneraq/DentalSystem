@@ -1,4 +1,4 @@
-package br.com.lp2.projeto.dentalSystem.service.agendamento;
+package br.com.lp2.projeto.dentalSystem.service.receita;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,26 +14,26 @@ import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 
-import br.com.lp2.projeto.dentalSystem.dto.AgendamentoDTO;
+import br.com.lp2.projeto.dentalSystem.dto.ReceitaDTO;
 import br.com.lp2.projeto.dentalSystem.firebase.FirebaseInitializer;
 
 @Service
-public class DentalSystemServiceImplAgendamento implements DentalSystemServiceAgendamento {
+public class DentalSystemServiceImplReceita implements DentalSystemServiceReceita {
 
     @Autowired
     private FirebaseInitializer firebase;
 
     @Override
-    public List<AgendamentoDTO> list(String idPaciente) {
-        List<AgendamentoDTO> response = new ArrayList<>();
-        AgendamentoDTO agendamento;
+    public List<ReceitaDTO> list(String idPaciente) {
+        List<ReceitaDTO> response = new ArrayList<>();
+        ReceitaDTO receita;
 
         ApiFuture<QuerySnapshot> querySnapshotApiFuture = getCollection(idPaciente).get();
         try {
             for (DocumentSnapshot doc : querySnapshotApiFuture.get().getDocuments()) {
-            	agendamento = doc.toObject(AgendamentoDTO.class);
-                agendamento.setId(doc.getId());
-                response.add(agendamento);
+            	receita = doc.toObject(ReceitaDTO.class);
+            	receita.setId(doc.getId());
+                response.add(receita);
             }
             return response;
         } catch (Exception e) {
@@ -42,8 +42,8 @@ public class DentalSystemServiceImplAgendamento implements DentalSystemServiceAg
     }
 
     @Override
-    public Boolean add(String idPaciente,AgendamentoDTO agendamento) {
-        Map<String, Object> docData = getDocData(agendamento);
+    public Boolean add(String idPaciente,ReceitaDTO receita) {
+        Map<String, Object> docData = getDocData(receita);
 
         ApiFuture<WriteResult> writeResultApiFuture = getCollection(idPaciente).document().create(docData);
 
@@ -59,8 +59,8 @@ public class DentalSystemServiceImplAgendamento implements DentalSystemServiceAg
 
 
     @Override
-    public Boolean edit(String idPaciente, String id,AgendamentoDTO agendamento) {
-        Map<String, Object> docData = getDocData(agendamento);
+    public Boolean edit(String idPaciente, String id,ReceitaDTO receita) {
+        Map<String, Object> docData = getDocData(receita);
         ApiFuture<WriteResult> writeResultApiFuture = getCollection(idPaciente).document(id).set(docData);
         try {
             if(null != writeResultApiFuture.get()){
@@ -89,15 +89,15 @@ public class DentalSystemServiceImplAgendamento implements DentalSystemServiceAg
         return firebase.getFirestore().collection("paciente").document(idP).collection("agendamento");
     }
 
-    private Map<String, Object> getDocData(AgendamentoDTO agendamento) {
+    private Map<String, Object> getDocData(ReceitaDTO receita) {
         Map<String, Object> docData = new HashMap<>();
-        docData.put("data", agendamento.getData());
-        docData.put("horario", agendamento.getHorario());
-        docData.put("obs", agendamento.getObs());
-        docData.put("idPaciente", agendamento.getIdPaciente());
-        docData.put("nomePaciente", agendamento.getNomePaciente());
-        docData.put("idMedico", agendamento.getIdMedico());
-        docData.put("nomeMedico", agendamento.getNomeMedico());
+        docData.put("data", receita.getData());
+        docData.put("medicamento", receita.getMedicamento());
+        docData.put("quantidade",  receita.getQuantidade());
+        docData.put("medida", receita.getIdMedico());
+        docData.put("prescricao", receita.getPrescricao());
+        docData.put("idPaciente", receita.getIdPaciente());
+        docData.put("idMedico", receita.getIdMedico());
         return docData;
     }
 }

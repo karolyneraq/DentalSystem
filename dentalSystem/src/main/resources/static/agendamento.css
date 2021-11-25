@@ -5,16 +5,9 @@ body{
     border: 0;
     overflow: visible;
     background-color: #F2F2F2;
-    margin-bottom: 170px;
+    min-width: 1000px;
 }
-h2, .o-pacientes .cadastrar{
-    font-family: Roboto, sans-serif;
-    color: black;
-    font-weight:lighter;
-    text-align: center;
-    margin: 10px;
-    font-weight: bold;
-}
+
 h3{
     color: black;
     font-weight:lighter;
@@ -164,24 +157,31 @@ nav > a{
 /* card*/
 
 .o-footer{
-    background-color: #F2F2F2;
     font-family: Roboto;
-    width: 900px;
-    margin-left: 200px;
-    margin-top: 15px;
+    margin-top: 25px;
     height: max-content;
 }
-.card-header{
+
+#formulario{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#card-header{
     background-color: #A0EECA;
     display: grid;
     grid-template-columns: 16fr 1fr;
-    width: 900px;
     height:max-content;
 }
 
 .titulo{
     padding-top: 8px;
     padding-bottom: 0px;
+    font-family: Roboto;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 30px;
 }
 
 .campos{
@@ -192,14 +192,20 @@ nav > a{
     font-weight: bold;
 }
 
+#informacoes-agendamento{
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 8px;
+    border: 4px solid #57cc97;
+}
+
 #dados-agendamento{
     padding-top: 0px;
 }
 
 #campos-informacoes-agendamento{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding-left: 20px;
+    padding-top: 10px;
 }
 
 .col-6{
@@ -208,22 +214,22 @@ nav > a{
 
 .card{
     height:500px;
-    width: 907px;
-    background-color: white;
-    margin-left: 0px;
-    margin-top: 0px;
-    border-radius: 8px;
-    border: 4px solid #57cc97;
+    width: 900px;
 }
 
-
-.o-pacientes, .o-data, .o-horario{
-    font-size: 20px;
-    margin-top: 10px;
+.o-data, .o-horario{
+    font-size: 16px;
     color: black;
     font-weight: bold;
-    
-    
+    padding-bottom: 10px;
+}
+
+.o-horario{
+  padding-top: 20px;
+}
+
+#paciente-input{
+  margin-top: 10px;
 }
 
 #paciente-input, #dentista-input{
@@ -238,7 +244,6 @@ nav > a{
     outline: none;
     font-size: 16px;
     font-family: Roboto;
-    margin-top: 5px;
     
   }
   #data-input, #horario-input{
@@ -247,22 +252,44 @@ nav > a{
     width: 200px;
     height: 45px;
     border-width: 4px;
-    margin-bottom: 10px;
     padding: 20px;
     text-align: left;
     outline: none;
     font-size: 16px;
     font-family: Roboto;
-    margin-top: 10px;
-    display: inline-block; 
   }
   #button-agendar{
     background: #173C6D;
     color:white;
-    margin-left: 600px;
     border-radius: 10px;
     width:200px;
     height: 45px;
     font-size: 18px;
-    align-self: auto;
+    position: relative;
+    float: right;
   }
+
+  .form-group.floating>label {
+    bottom: 40px;
+    left: 8px;
+    position: relative;
+    background-color: white;
+    color: #686868da;
+    padding: 3px 5px 0px 5px;
+    font-size: 16px;
+    transition: 0.1s;
+    pointer-events: none;
+    transform-origin: bottom left;
+}
+
+.form-control.floating:focus~label{
+    transform: translate(1px,-85%) scale(0.80);
+    color: #173C6D;
+    background-color: white;
+}
+
+.form-control.floating:valid~label{
+    transform-origin: bottom left;
+    transform: translate(1px,-85%) scale(0.80);
+    opacity: .8;
+}

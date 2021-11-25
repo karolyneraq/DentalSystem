@@ -4,6 +4,7 @@
 body{
     font-family:  Source Serif Pro;
     color: white;
+    min-width: 1000px;
 }
 .row {
     margin: 0;
@@ -219,7 +220,6 @@ h2, .o-pacientes .cadastrar{
     height: 45px;
     color: white;
     font-size: 18px;
-    align-self: auto;
   }
   #listar-button{
     margin-top: 20px;
@@ -255,7 +255,7 @@ h2, .o-pacientes .cadastrar{
     grid-template-columns: 6fr 1fr 1fr;
 }
 
-  #busca{
+#busca{
     padding-bottom: 30px;
     padding-top: 0px;
     width: 300px;
@@ -325,6 +325,13 @@ h6{
     color: black;
     margin: 10px;
 }
+
+h7{
+    display: inline-block;
+    color: #173C6D;
+    margin: 10px;
+}
+
 
 .observacoes{
     padding-top: 10px;

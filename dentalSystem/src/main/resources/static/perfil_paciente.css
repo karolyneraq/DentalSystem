@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
  
 /* Gerais */
@@ -150,7 +149,7 @@ nav > a:hover{
 
 }
 
-/*Conteudo*/
+/* Conteudo */
 
 .paciente{
     background-color: #FFFDFD;
@@ -194,7 +193,7 @@ h3{
     transition: all 0.4s;
 }
 
-/*Dados do paciente*/
+/* Dados do paciente */
 
 .o-footer{
     background-color: #F2F2F2;
@@ -234,8 +233,6 @@ h3{
 .btn-options{
     padding-bottom: 0px;
     padding-top: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 #dados-paciente{
@@ -261,7 +258,7 @@ h3{
     max-height: 220px;
 }
 
-/*Historico*/
+/* Historico */
 
 #historico-options{
     display: grid;
@@ -271,8 +268,6 @@ h3{
 .btn-options-1{
     padding-bottom: 0px;
     padding-top: 4px;
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr;
 }
 
 .campos-historico{
@@ -345,7 +340,7 @@ h3{
     border-right: 0ch;
 }
 
-/*Mensagens*/
+/* Mensagens */
 
 #btn-menu{
     padding: 0;
@@ -356,4 +351,108 @@ h3{
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+
+/* Modal*/
+  
+#modal{
+    max-width: 1000px;
+    min-width: 600px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, +5%);
+}
+
+
+.modal-header{
+    background: #67dfc7;
+    color: #173C6D;  
+  }
+
+/* Listar - Model */
+
+#header-listar-modal{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+}
+
+  #busca{
+    padding-bottom: 30px;
+    padding-top: 0px;
+    width: 300px;
+    height: 20px;
+}
+
+#busca input{
+    border-radius: 10px;
+    border-color: #173C6D;
+    border-width: 3px;
+    text-align: left;
+    font-size: 15px;
+    padding: 0 0 0 5px;
+    background-color: #FFFFFF;
+    pointer-events: auto;
+}
+
+#busca input:focus{
+    outline: none;
+}
+.listagem{
+    display: grid;
+    grid-template-columns: 1.3fr 0.6fr 0.6fr 0.2fr 0.2fr;
+}
+
+#titulo-listagem{
+    background: rgba(160, 238, 202, 0.3);
+    border-radius: 5px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+*/Outras definições/
+
+  h5{
+    font-weight: bold;
+  }
+  .form-check-label{
+      color:black;
+  }
+  
+  .form-check-label{
+    align-content:space-between;
+}
+#button-cancelar{
+    background: #E5E5E5;
+    color: #173C6D;
+}
+#button-cadastrar, #button-listar{
+    background: #173C6D;
+    color:white;
+}
+h6{
+    display: inline-block;
+    color: black;
+    margin: 10px;
+}
+
+.observacoes{
+    padding-top: 10px;
+}
+#button-excluir{
+    background: #173C6D;
+    color:white;  
 }

@@ -8,39 +8,53 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.lp2.projeto.dentalSystem.dto.AgendamentoDTO;
+import br.com.lp2.projeto.dentalSystem.dto.DentistaDTO;
 import br.com.lp2.projeto.dentalSystem.dto.PacienteDTO;
 import br.com.lp2.projeto.dentalSystem.service.agendamento.DentalSystemServiceAgendamento;
+import br.com.lp2.projeto.dentalSystem.service.dentista.DentalSystemServiceDentista;
+import br.com.lp2.projeto.dentalSystem.service.paciente.DentalSystemServicePaciente;
 
 
 
 @Controller
 public class AgendamentoController {
-
 	@Autowired
     private DentalSystemServiceAgendamento service;
+	@Autowired
+	private DentalSystemServicePaciente servicePaciente;
+	@Autowired
+	private DentalSystemServiceDentista serviceDentista;
 	
-	@GetMapping("/fazeragendamento")
-	public String login(Model model) {
-		return "paciente/agendamento";
+	@GetMapping("/AgendamentoCadastro")
+    public String agendamento(@RequestParam(value = "id", required = false) String idP, Model model) {
+    	int dP= servicePaciente.buscarID(idP);
+    	PacienteDTO paciente = servicePaciente.list().get(dP);
+    	AgendamentoDTO agendar = new AgendamentoDTO();
+    	agendar.setIdPaciente(paciente.getId());
+    	agendar.setNomePaciente(paciente.getNome());
+    	model.addAttribute("agendamento",agendar);
+    	return  "paciente/agendamento";
 	}
-
-    @GetMapping(value = "/list")
-    public ResponseEntity list(){
-        return new ResponseEntity(service.list(), HttpStatus.OK);
+	/*
+    @GetMapping("/AgendamentoCadastro")
+    public String agendamento(@RequestParam(value = "id", required = false) String idP, Model model) {
+    	int dP= servicePaciente.buscarID(idP);
+    	PacienteDTO paciente = servicePaciente.list().get(dP);
+    	AgendamentoDTO agendar = new AgendamentoDTO();
+    	agendar.setIdPaciente(paciente.getId());
+    	agendar.setNomePaciente(paciente.getNome());
+    	model.addAttribute("agendamento",agendar);
+    	model.addAttribute("dentistalista", serviceDentista.list());
+    	System.out.println(serviceDentista.list());
+    	return  "paciente/agendamento";
+	}
+    */
+    
+    @PostMapping("/AgendamentoAdd")
+	public String agendamentoSubmit(@RequestParam(value = "id", required = false) String idP, @ModelAttribute AgendamentoDTO agendamento, Model model) {
+    	
+    	service.add(idP,agendamento);
+		return  "redirect:/pacienteCadastro";
     }
-
-    @PostMapping(value = "/add")
-    public ResponseEntity add(@RequestBody AgendamentoDTO agendamento){
-        return new ResponseEntity(service.add(agendamento), HttpStatus.OK);
-    }
-
-    @PutMapping(value = "/{id}/update")
-    public ResponseEntity edit(@PathVariable(value = "id") String id, @RequestBody AgendamentoDTO agendamento){
-        return new ResponseEntity(service.edit(id,agendamento), HttpStatus.OK);
-    }
-
-    @DeleteMapping(value = "/{id}/delete")
-    public ResponseEntity delete(@PathVariable(value = "id") String id){
-        return  new ResponseEntity(service.delete(id), HttpStatus.OK);
-    }
+ 
 }

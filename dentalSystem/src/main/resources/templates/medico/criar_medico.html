@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizar Dados do Paciente</title>
+    <title>Cadastro do Médico</title>
 
     <!-- Fonte-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </head>
 <body>
   <header>
@@ -33,8 +34,8 @@
   </header>
   <nav>
     <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
-       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
-       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
+    <a href="/dentistaCadastro" style="text-decoration:none">Dentistas</a>
+    <a href="#" style="text-decoration:none">Medicamentos</a>
     <a href="#" style="text-decoration:none">Notificações</a>
     <a href="#" style="text-decoration:none">Perfil</a>
     <div class="animation start-pacientes"></div>
@@ -48,35 +49,32 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="titulo">
-                                <h2>Atualizar Dados do Paciente</h2>
+                                <h2>Cadastrar Dados do Dentista</h2>
                             </div>
                         </div>
                  		<div class="card-body">
-                          <form th:action="@{/pacienteUpdates(id=${paciente.id})}"  th:object="${paciente}" method="Post">
+                          <form th:action="@{/dentistaAdd}"  th:object="${dentista}" method="Post">
                             <div class="form-group floating">
-                              <input class="form-control floating"  type="text" th:field="${paciente.nome}" th:value="${paciente.nome}" id="nome-completo-input" nome="nome" required>
+                              <input class="form-control floating"  type="text" th:field="*{nome}"  id="nome-completo-input" nome="nome" required>
                               <label for="nome-completo-input">Nome</label>
 
-                              <input class="form-control floating" type="text"  th:field="${paciente.celular}" th:value="${paciente.celular}" id="celular-input" nome="celular" required>
+                              <input class="form-control floating" type="text"  th:field="*{celular}" onkeypress="$(this).mask('(00) 00000-0000')" id="celular-input" nome="celular" required>
                               <label for="celular-input">Celular</label>
 
-                              <input class="form-control floating" type="text"  th:field="${paciente.cpf}" th:value="${paciente.cpf}" id="cpf-input" nome="cpf" required>
+                              <input class="form-control floating" type="text"  th:field="*{cpf}"  id="cpf-input" nome="cpf" onkeypress="$(this).mask('000.000.000-00')" required>
                               <label for="cpf-input">CPF</label>
 
-                              <input class="form-control floating" type="text"  th:field="${paciente.rg}" th:value="${paciente.rg}" id="rg-input" nome="rg" required>
-                              <label for="rg-input">RG</label>
+                              <input class="form-control floating" type="text"  th:field="*{cRO}" id="rg-input" nome="cRO" required>
+                              <label for="rg-input">CRO</label>
 
-                              <input class="form-control floating" type="text"  th:field="${paciente.sexo}" th:value="${paciente.sexo}" id="sexo-input" nome="sexo" required>
-                              <label for="sexo-input">Sexo</label>
+                              <input class="form-control floating" type="text"  th:field="*{especialidade}"  id="sexo-input" nome="especialidade" required>
+                              <label for="sexo-input">Especialidade</label>
 
                             </div>
-                            <input class="form-control" type="date"  th:field="${paciente.dataNascimento}" th:value="${paciente.dataNascimento}" id="data-nasc-input" nome="dataNascimento" required>
-                            <h6 class="observacoes">Observações:</h6>
-                            <label for="message-text"></label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <input class="form-control" type="date"  th:field="*{dataNascimento}"  id="data-nasc-input" nome="dataNascimento" required>
                             <div class="modal-footer">
                              
-                              <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Atualizar</button>
+                              <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Salvar</button>
                             </div>
                           </form>
                         </div>

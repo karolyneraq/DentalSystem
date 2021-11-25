@@ -12,6 +12,9 @@ public class PacienteDTO {
 	private String celular;
 	private String rg;
 	private String sexo;
+	private String numero;
+	
+	
 	
 	
 	public PacienteDTO() {
@@ -23,9 +26,16 @@ public class PacienteDTO {
 		this.celular = celular;
 		this.rg = rg;
 		this.sexo = sexo;
+		this.numero = numero;
 	}
-	
 
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 
 	public String getId() {
 		return id;

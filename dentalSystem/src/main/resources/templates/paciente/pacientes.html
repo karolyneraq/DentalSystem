@@ -27,21 +27,61 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	
+	<script>
+		function mascara_cpf(){
+			if(document.getElementById('cpf-input').value ==''){
+				alert('Preencha o campo');
+				document.getElementById('cpf-input').focus();
+				return false;
+			}
+			var Soma;
+    		var Resto;
+    		Soma = 0;
+  			if (document.getElementById('cpf-input').value == '000.000.000-00'){
+				alert('CPF inválido');
+				document.getElementById('cpf-input').focus();
+				return false;
+			}
+  			for (i=1; i<=14; i++) Soma = Soma + parseInt(document.getElementById('cpf-input').value.substring(i-1, i)) * (11 - i);
+  			Resto = (Soma * 10) % 11;
+
+    		if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    		if (Resto != parseInt(document.getElementById('cpf-input').value.substring(9, 10)) ){
+				alert('CPF inválido');
+				document.getElementById('cpf-input').focus();
+				return false;
+			}
+
+  			Soma = 0;
+    		for (i = 1; i <= 10; i++) Soma = Soma + parseInt(document.getElementById('cpf-input').value.substring(i-1, i)) * (12 - i);
+    		Resto = (Soma * 10) % 11;
+
+    		if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    		if (Resto != parseInt(document.getElementById('cpf-input').value.substring(10, 11) ) ){
+				alert('CPF inválido');
+				document.getElementById('cpf-input').focus();
+				return false;
+			}
+		return true;
+		}
+	</script>
 </head>
 <body>
     <header>
         <h1>DentalSystem</h1>
     </header>
     <nav>
-       <a href="/pacientecadastro" style="text-decoration:none">Pacientes</a>
-       <a href="/fazeragendamento" style="text-decoration:none">Agendamento</a>
-       <a href="#" style="text-decoration:none">Medicamentos</a>
+       <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
+       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
+       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
        <a href="#" style="text-decoration:none">Notificações</a>
        <a href="#" style="text-decoration:none">Perfil</a>
        <div class="animation start-pacientes"></div>
     </nav>
     <main class="o-main">
-        <form id="formulario">
+        <div id="formulario">
             <div class="form-group">
                 <p class="o-pacientes">Buscar paciente</p>
                 <input class="form-control" type="text" id="paciente-input"placeholder="Buscar paciente">
@@ -50,7 +90,7 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarModal" id="cadastrar-button">Cadastrar Paciente</button>
             
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listarModal" id="listar-button">Listar Pacientes</button>
-        </form>
+        </div>
 
         <div class="modal" id="cadastrarModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
@@ -60,14 +100,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                <form th:action="@{/pacienteAdd}"  th:object="${paciente}" method="post">
+                <form th:action="@{/pacienteAdd}"  th:object="${paciente}" method="post" onsubmit="mascara_cpf()">
                   <div class="form-group">
-                    <input class="form-control" type="text" th:field="*{nome}" id="nome-completo-input" placeholder="Nome Completo">
-                    <input class="form-control" type="text"  th:field="*{celular}" id="celular-input" placeholder="Celular">
-                    <input class="form-control" type="text"  th:field="*{cpf}" id="cpf-input" placeholder="CPF">
-                    <input class="form-control" type="text"  th:field="*{rg}" id="rg-input" placeholder="RG">
-                    <input class="form-control" type="text"  th:field="*{sexo}" id="data-nasc-input" placeholder="Sexo">
-                	<input class="form-control" type="date"  th:field="*{dataNascimento}" id="data-nasc-input" placeholder="Data de Nascimento">
+                    <input class="form-control" type="text" th:field="*{nome}" id="nome-completo-input" placeholder="Nome Completo" required>
+                    <input class="form-control" type="text"  th:field="*{celular}" id="celular-input" onkeypress="$(this).mask('(00) 00000-0000')" placeholder="Celular" required>
+                    <input class="form-control" type="text"  th:field="*{cpf}" id="cpf-input" name="cpf" onkeypress="$(this).mask('000.000.000-00')" placeholder="CPF" maxlength="14" required>
+                    <input class="form-control" type="text"  th:field="*{rg}" id="rg-input" onkeypress="$(this).mask('0000000-0')" placeholder="RG" required>
+                    <input class="form-control" type="text"  th:field="*{sexo}" id="data-nasc-input" placeholder="Sexo" required>
+                	<input class="form-control" type="date"  th:field="*{dataNascimento}" id="data-nasc-input" placeholder="Data de Nascimento" required>
                   </div>
                   <h6 class="observacoes">Observações:</h6>
                                 <label for="message-text"></label>
@@ -85,12 +125,12 @@
               <div class="modal-content" id="modal">
                   <div class="modal-header" id="header-listar-modal">
                       <h5 class="modal-title">Lista de Pacientes</h5>
-                      <form th:action="@{/pacienteadd}"  th:object="${paciente}" method="POST">
+                      <form>
                       <div class="input-group rounded" id="busca" >
                           <input type="search" class="form-control rounded" placeholder="Pesquise um paciente..." aria-label="Search"
                           aria-describedby="search-addon"/>
                           <span class="input-group-text border-0" id="search-addon">
-                              <button type="submit" class="bi bi-search" data-bs-dismiss="modal"></button>
+                              <button type="submit" value="Buscar" class="bi bi-search"></button>
                           </span>
                       </div>
                       </form>
@@ -103,11 +143,11 @@
         				<th><h6>Celular</h6></th>
       				</tr>
 	      			<tr class="listagem" id="informacoes-listagem" th:each="pacientelist : ${pacientelista}">
-				        <th><h6><a th:href="@{/pacientePerfil/{id}(id = ${pacientelist.id})}"><span th:text="${pacientelist.nome}"></span></a></h6></th>
+				        <th><a th:href="@{/pacientePerfil(id=${pacientelist.id})}"><h7><span th:text="${pacientelist.nome}"></span></h7></a></th>
        					<th><h6><span th:text="${pacientelist.cpf}"></span></h6></th>
         				<th><h6><span th:text="${pacientelist.celular}"></span></h6></th>
         				<th class="btn-options">
-                               <a th:href="@{/pacienteEditar/{id}(id = ${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal" id="btn-opcoes">
+                               <a th:href="@{/pacienteEditar(id=${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal" id="btn-opcoes">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" id="icone-editar">
                                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -115,7 +155,7 @@
                               </button></a>
                               </th>
                             <th class="btn-options">
-                              <a th:href="@{/pacienteDeletar/{id}(id = ${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal"  id="btn-opcoes">
+                              <a th:href="@{/pacienteDeletar(id=${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal"  id="btn-opcoes">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                   <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>

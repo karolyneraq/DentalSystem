@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receita</title>
+
+  <!-- Fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+ <!--BootStrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href= "receita.css">
+
+ <!--Script-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <h1>DentalSystem</h1>
+  </header>
+
+
+  <nav>
+     <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
+       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
+       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
+      <a href="#" style="text-decoration:none">Notificações</a>
+      <a href="#" style="text-decoration:none">Perfil</a>
+    <div class="animation start-pacientes"></div>
+  </nav>
+
+
+  <main class="o-main">
+    
+    <div class="paciente">
+      <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#1abc9c" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+      </div>
+      <div class="paciente-escolhido">
+          <h3>Maria Alencar Lima</h3>
+          <h4>Nº Prontuário: 02</h4>
+      </div>
+      <div class="escolher-paciente">
+          <label for="opcoes-paciente" class="opcoes-paciente">
+          <h3 class="nome-paciente">Maria Alencar Lima</h3></label>
+          <select id="opcoes-paciente">
+            <option value="1">Informações do Paciente</option>
+            <option selected value="2">Documentos</option>
+            <option value="3">Tratamento</option>
+          </select>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="titulo">
+                            <h2>Receituário</h2>
+                        </div>
+                    </div>
+                    <div class="card-body" id="campos-informacoes-exclusao">
+
+                      <form>
+
+                        <div class="form-group floating">
+
+                          <input type="text" class="form-control floating" id="profissional-input" required value="">
+                          <label for="profissional-input">Profissional</label>
+
+                          <input class="form-control floating" type="text" id="paciente-input" required value="">
+                          <label for="paciente-input">Paciente</label>
+
+                        </div>
+
+                        <label for="data-input">Data:</label>
+                        <input class="form-control" type="date" id="data-input"placeholder="Data">
+
+                        <div class="btn-options">
+                          <label for="medicamento-input" class="form-label">Medicamento</label>
+                          
+                          <div class="apagar-medicamento">
+                            <button type="button" class="btn btn-secundary" id="btn-opcoes">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg>
+                            </button>
+                        </div>
+
+                        </div>
+                        <input class="form-control" list="datalistOptions" id="medicamento-input" placeholder="Digite ou escolha um medicamento...">
+                        <datalist id="datalistOptions">
+                          <option value="Criar novo medicamento">
+                          <option value="New York">
+                          <option value="Seattle">
+                          <option value="Los Angeles">
+                          <option value="Chicago">
+                        </datalist>
+
+                        <div class="medicamento-qtd-medida">
+                          <label for="qtd-input"><p class="o-quantidade">Quantidade:</p></label>
+                          <input class="form-control" type="number" id="qtd-input" min="0" placeholder="Qtd">
+
+                          <label for="medida-input" class="o-medida"><p>Medida:</p></label>
+                          <select id="medida-input">
+                            <option selected>Escolha uma medida</option>
+                            <option value="1">Caixa</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                          
+                        </div>
+
+
+                        <label for="message-text"><h6 class="prescricao">Prescrição:</h6></label>
+                        <textarea class="form-control" id="message-text"></textarea>
+
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                              <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                              <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                            </svg>
+                            Imprimir</button>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+  </footer>   
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Medicamentos</title>
+
+  <!-- Fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+ <!--BootStrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href= "cadastro_medicamentos.css">
+
+ <!--Script-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <h1>DentalSystem</h1>
+  </header>
+
+
+  <nav>
+     <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
+       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
+       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
+    <a href="#" style="text-decoration:none">Notificações</a>
+    <a href="#" style="text-decoration:none">Perfil</a>
+    <div class="animation start-medicamentos"></div>
+  </nav>
+
+  <footer>
+    <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="titulo">
+                            <h2>Cadastro de Medicamento</h2>
+                        </div>
+                    </div>
+                    <div class="card-body" id="campos-informacoes-medicamento">
+
+                      <form th:action="@{/medicamentoAdd}" th:object="${medicamento}" method="post">
+                        <h6>Tipo de uso:</h6>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Uso externo">
+                            <label class="form-check-label" for="inlineRadio1">Uso externo</label>
+                          </div>
+                          <div class="form-check form-check-inline">  
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Uso interno">
+                            <label class="form-check-label" for="inlineRadio2">Uso interno</label>
+                          </div>
+
+                        <div class="form-group floating">
+
+                          <input th:field="*{nome}" type="text" class="form-control floating" id="medicamento-input" required value="">
+                          <label for="medicamento-input">Medicamento</label>
+
+                          <input th:field="*{posologia}" class="form-control floating" type="text" id="posologia-input" required value="">
+                          <label for="posologia-input">Posologia</label>
+
+                        </div>
+                        <div>
+                            <select id="medida-input">
+                                <option selected>Escolha uma medida</option>
+                                <option value="1">Uma</option>
+                                <option value="2">Duas</option>
+                                <option value="3">Três</option>
+                              </select>
+                          </div>
+                          <div  class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Esse medicamento exige receita controlada</label>
+                          </div>
+                          <div>
+                            <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Cadastrar</button>
+                            <a href="medicamentos.html"><button type="submit"  class="btn btn-cancelar" id="button-cancelar">Cancelar</button>
+                          </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+  </footer>   
+</body>
+</html>

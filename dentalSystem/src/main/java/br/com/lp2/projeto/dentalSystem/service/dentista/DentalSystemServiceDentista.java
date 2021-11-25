@@ -13,5 +13,7 @@ public interface DentalSystemServiceDentista {
 
     Boolean delete(String id);
 
-
+    int buscarID(String id);
+    
+    String buscarIDPorNome(String nome);
 }

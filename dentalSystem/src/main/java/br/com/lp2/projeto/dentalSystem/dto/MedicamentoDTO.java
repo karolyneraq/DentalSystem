@@ -13,8 +13,7 @@ public class MedicamentoDTO {
 	private String receitaControlada;
 	
 	
-	public MedicamentoDTO(String id, String nome, String tipo, String medida, String posologia,
-			String receitaControlada) {
+	public MedicamentoDTO() {
 		super();
 		this.id = id;
 		this.nome = nome;

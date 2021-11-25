@@ -1,20 +1,17 @@
+
 @charset "UTF-8";
  
 /* Gerais */
 body{
     font-family:  Source Serif Pro;
-    color: white;
-    min-width: 1000px;
 }
 .row {
     margin: 0;
 }
 .container {
     padding: 70px 0;
-}
-p, li{
-    color: white;
-    font-size: 14px;
+    padding-top: 0px;
+    min-width: 600px;
 }
  
 /* Barra de navegação */
@@ -28,6 +25,7 @@ h1{
 body{
     background-color: white; 
     margin-bottom: 170px;
+    min-width: 1000px;
 }
  
 header{
@@ -49,6 +47,7 @@ nav{
     position: relative;
     margin: 0%;
     height: 45px;
+    min-width: 500px;
     background-color: #173C6D;
     padding: 10px;
     justify-content: space-between;
@@ -126,7 +125,6 @@ nav > a:hover{
     color: white;
 }
 
-
 * {
 
     list-style:none; 
@@ -156,14 +154,63 @@ nav > a:hover{
     grid-area: main;
 }
 
+.paciente{
+    background-color: #FFFDFD;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 12fr 2fr;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h4{
+    font-size: 14px;
+}
+
+.paciente-escolhido{
+    padding-top: 15px;
+}
+
+.escolher-paciente{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nome-paciente{
+    padding-left: 10px;
+}
+
+.escolher-paciente>select{
+    color: white;
+}
+
+#opcoes-paciente{
+    border-radius: 10px;
+    background-color: #173C6D;
+    color: white;
+    width: fit-content;
+    height: 40px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.o-footer{
+    font-family: Roboto;
+    min-width: 600px;
+}
+
+
 h2, .o-pacientes .cadastrar{
     font-family: Roboto;
 
-}
-
-p, li{
-    color: black;
-    font-size: 15px;
 }
 
 h1{
@@ -174,7 +221,7 @@ h1{
 }
 h2, .cadastrar{
     font-family: Roboto, sans-serif;
-    color: #173C6D;
+    color: black;
     font-weight:lighter;
     text-align: center;
     margin: 5px;
@@ -182,24 +229,6 @@ h2, .cadastrar{
     font-weight: bold;
     font-size: 20px;
     
-}
-
-h3{
-    color: black;
-    font-weight:lighter;
-    font-family: Roboto;
-    margin-top: 20px;
-    font-size: 20px;
-    margin-left: 10px;
-    display: inline-block;   
-}
-h5{
-    font-weight: bold;
-}
-h6{
-    display: inline-block;
-    color: black;
-    margin: 10px;
 }
 
 .div_principal{
@@ -245,13 +274,16 @@ h6{
     padding-left: 0px;
 }
 .card{
-    height:640px;
+    height:760px;
     width: 600px;
+    min-width: 600px;
     background-color: white;
-    margin-left: 300px;
     margin-top: 0px;
     border-radius: 8px;
     border: 4px solid #57cc97;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 .titulo{
     padding-top: 8px;
@@ -266,16 +298,40 @@ h6{
     font-weight: bold;
 }
 
-#dados-exclusao{
-    padding-top: 0px;
-}
 #formulario{
     position: absolute;
     top: 55%;
     left: 55%;
     transform: translate(-50%, -50%);
 }
-  #nome-completo-input{
+
+.o-pacientes{
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#medicamento-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 400px;
+    height: 45px;
+    border-width: 3px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  #medicamento-input{
+    background-image: url("arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 7px;
+  }
+
+  #medicamento-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    }
+
+  #profissional-input, #paciente-input{
     border-radius: 10px;
     border-color: #57CC97;
     width: 500px;
@@ -287,28 +343,49 @@ h6{
     font-family: Roboto;
   }
 
-  #celular-input, #cpf-input,  #rg-input{
+  #data-input, #medida-input{
     border-radius: 10px;
     border-color: #57CC97;
-    width: 300px;
-    height: 40px;
-    border-width: 3px;
-    text-align: left;
-    outline: none;
-    font-size: 16px;
-    font-family: Roboto;
-  }
-
-  #data-nasc-input, #sexo-input{
-    border-radius: 10px;
-    border-color: #57CC97;
-    width: 250px;
+    width: fit-content;
     height: 45px;
     border-width: 3px;
     text-align: left;
     outline: none;
     font-size: 16px;
-    font-family: Roboto;
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+
+  #medida-input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 7px;
+    padding-right: 2rem;
+  }
+
+  .medicamento-qtd-medida{
+      padding-top: 10px;
+      display: flex;
+      grid-gap: 15px;
+  }
+
+  .o-medida{
+      padding-left: 20px;
+  }
+
+  #qtd-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 100px;
+    height: 45px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
   #message-text{
@@ -316,6 +393,7 @@ h6{
     border-radius: 10px;
     border-color: #57CC97;
     border-width: 3px;
+    min-height: 200px;
   }
 
 #cadastrar-button{
@@ -339,12 +417,33 @@ h6{
     margin: 10px;
 }
 
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: 520px 1px;
+}
+
+.apagar-medicamento{
+    padding-top: 10px;
+}
+
 .form-group.floating>label {
     bottom: 34px;
     left: 8px;
     position: relative;
     background-color: white;
-    color: rgb(60, 60, 60);
+    color: #686868da;
     padding: 3px 5px 0px 5px;
     font-size: 16px;
     transition: 0.1s;

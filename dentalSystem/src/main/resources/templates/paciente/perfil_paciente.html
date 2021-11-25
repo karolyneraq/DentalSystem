@@ -30,11 +30,11 @@
     </header>
     <nav>
       <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
-       <a href="/fazeragendamento" style="text-decoration:none">Agendamento</a>
-       <a href="#" style="text-decoration:none">Medicamentos</a>
-       <a href="#" style="text-decoration:none">Notificações</a>
-       <a href="#" style="text-decoration:none">Perfil</a>
-       <div class="animation start-pacientes"></div>
+      <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
+      <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
+      <a href="#" style="text-decoration:none">Notificações</a>
+      <a href="#" style="text-decoration:none">Perfil</a>
+    <div class="animation start-pacientes"></div>
     </nav>
     <main class="o-main">
         <div class="paciente">
@@ -45,10 +45,11 @@
             </div>
             <div class="paciente-escolhido" >
                 <h2 th:text="${paciente.nome}"></h2>
-                <h3>Nº Prontuário: 01</h3>
+                <h3>Nº Prontuário: <span th:text="${paciente.numero}"></span></h3>
             </div>
             <div class="escolher-paciente">
                 <h2 th:text="${paciente.nome}"></h2>
+                
             </div>
         </div>
     </main>
@@ -59,13 +60,13 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="titulo"><h2>Dados do Paciente</h2></div>
-                            <div class="btn-options">
-                                <a th:href="@{/pacienteEditar/{id}(id = ${paciente.id})}"><button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#atualizarModal" id="btn-opcoes">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" id="icone-editar">
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                  </svg>
-                                </button></a>
+                                <div class="btn-options">
+                                    <a th:href="@{/pacienteEditar(id=${paciente.id})}"><button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#atualizarModal" id="btn-opcoes">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" id="icone-editar">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                    </svg>
+                                    </button></a>
                                 </div>
                         </div>
                         <div class="card-body" id="campos-informacoes-paciente">
@@ -73,12 +74,13 @@
                                 <h3 class="campos-texto">Nome</h3>
                                 <h3 class="campos-texto">Nº do Prontuário</h3>
                                 
+                                
                                 <h3 class="campos-texto">Data de nascimento</h3>
                                 <h3 class="campos-texto">Sexo</h3>
                             </div>
                             <div class="info" >
                                 <h3 th:text="${paciente.nome}"></h3>
-                                <h3>01</h3>
+                                <h3 th:text="${paciente.numero}"></h3>
      
                                 <h3 th:text="${paciente.dataNascimento}"></h3>
                                 <h3 th:text="${paciente.sexo}"></h3>
@@ -91,17 +93,17 @@
                         <div class="card-header" id="historico-options">
                             <div class="titulo"><h2>Consultas</h2></div>
                             <div class="btn-options-1">
-                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#pesquisarModal" id="btn-opcoes">
+                                <button type="button" class="btn btn-secundary" data-bs-toggle="modal" data-bs-target="#pesquisarModal" id="btn-opcoes">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-search" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                 </svg>
                                 </button>
-                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#atualizarModal" id="btn-opcoes">
+                                 <a th:href="@{/AgendamentoCadastro(id=${paciente.id})}"><button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#atualizarModal" id="btn-opcoes">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                   </svg>
-                                </button>
+                                </button></a>
                                 <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirModal" id="btn-opcoes">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
                                         <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
@@ -143,7 +145,7 @@
                         <div class="card-header" id="historico-options">
                             <div class="titulo"><h2>Histórico de Consultas</h2></div>
                             <div class="btn-options-1">
-                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#pesquisarModal" id="btn-opcoes">
+                                <button type="button" class="btn btn-secundary" data-bs-toggle="modal" data-bs-target="#pesquisarModal" id="btn-opcoes">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-search" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                 </svg>
@@ -209,6 +211,47 @@
                 </div>
             </div>
         </div>
+        <div class="modal" id="pesquisarModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" id="modal">
+                    <div class="modal-header" id="header-listar-modal">
+                        <h5 class="modal-title">Lista de Agendamento do Paciente</h5>
+                    </div>
+                    <table>
+                        <tr class="listagem" id="titulo-listagem">
+                          <th><h6>Data</h6></th>
+                             <th><h6>Horario</h6></th>
+                          <th><h6>Contato do Paciente</h6></th>
+                          <th><h6>Dentista</h6></th>
+                        </tr>
+                        <tr class="listagem" id="informacoes-listagem" th:each="Agendamentolist : ${Agendamentolista}">
+                          <th><h6><span th:text="${Agendamentolist.data}"></span></a></h6></th>
+                             <th><h6><span th:text="${Agendamentolist.horario}"></span></h6></th>
+                          <th><h6><span th:text="${Agendamentolist.nomePaciente}"></span></h6></th>
+                           <th><h6><span th:text="${Agendamentolist.nomeMedico}"></span></h6></th>
+                          <th class="btn-options">
+                                 <a th:href="@{/pacienteEditar/{id}(id = ${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal" id="btn-opcoes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16" id="icone-editar">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                  </svg>
+                                </button></a>
+                                </th>
+                              <th class="btn-options">
+                                <a th:href="@{/pacienteDeletar/{id}(id = ${pacientelist.id})}"><button type="button" class="btn btn-secundary" data-bs-toggle="modal"  id="btn-opcoes">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                  </svg>
+                              </button></a>
+                             </th>
+                        </tr>
+                      </table>         
+                </div>
+             </div>
+             <div class="modal-footer">
+            </div>
+          </div>
     </footer>
 </body>
 </html>

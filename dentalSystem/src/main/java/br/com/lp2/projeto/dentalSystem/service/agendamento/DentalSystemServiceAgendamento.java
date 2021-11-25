@@ -5,13 +5,13 @@ import br.com.lp2.projeto.dentalSystem.dto.AgendamentoDTO;
 import java.util.List;
 public interface DentalSystemServiceAgendamento {
 
-    List<AgendamentoDTO> list();
+    List<AgendamentoDTO> list(String idPaciente);
 
-    Boolean add(AgendamentoDTO agendamento);
+    Boolean add(String idPaciente,AgendamentoDTO agendamento);
 
-    Boolean edit(String id,AgendamentoDTO agendamento);
+    Boolean edit(String idPaciente, String id,AgendamentoDTO agendamento);
 
-    Boolean delete(String id);
+    Boolean delete(String idPaciente, String id);
 
 
 }

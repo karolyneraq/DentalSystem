@@ -40,7 +40,37 @@ public class DentalSystemServiceImplPaciente implements DentalSystemServicePacie
             return null;
         }
     }
+    
+    @Override
+    public int buscarID(String id) {
+    	boolean verificar;
+    	int achou=0;
+    	if(list().size() != 0) {
+	    	for(int i=0; i<list().size(); i++) {
+	    		verificar = list().get(i).getId().contains(id);
+	    		if(verificar==true) {
+	    			achou=i;
+	    		}
+	    	}
+    	}
+    	return achou;
+    }
 
+    @Override
+    public String buscarIDPorNome(String nome) {
+    	boolean verificar;
+    	String achou=null;
+    	if(list().size() != 0) {
+	    	for(int i=0; i<list().size(); i++) {
+	    		verificar = list().get(i).getNome().toLowerCase().contains(nome.toLowerCase());
+	    		if(verificar==true) {
+	    			achou =list().get(i).getId();
+	    		}
+	    	}
+    	}
+    	return achou;
+    } 
+    
     @Override
     public Boolean add(PacienteDTO paciente) {
     	
@@ -97,6 +127,7 @@ public class DentalSystemServiceImplPaciente implements DentalSystemServicePacie
         docData.put("dataNascimento", paciente.getDataNascimento());
         docData.put("sexo", paciente.getSexo());
         docData.put("celular", paciente.getCelular());
+        docData.put("numero", paciente.getNumero());
         return docData;
     }
 }

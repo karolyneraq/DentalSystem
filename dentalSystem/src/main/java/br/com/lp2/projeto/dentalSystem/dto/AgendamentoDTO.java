@@ -6,21 +6,41 @@ import lombok.Data;
 public class AgendamentoDTO {
 	
 	private String id;
-	private String nomePaciente;
 	private String data;
 	private String horario;
-	private String nomeMedico;
 	private String obs;
+	
+	private String idMedico;
+	private String nomeMedico;
+	private String nomePaciente;
+	private String idPaciente;
+	
 
-	public AgendamentoDTO(String id, String nomePaciente, String nomeMedico, String data, String horario, String obs) {
+	
+	
+	public AgendamentoDTO() {
 		super();
 		this.id = id;
-		this.nomePaciente = nomePaciente;
 		this.data = data;
 		this.horario = horario;
 		this.obs = obs;
+		this.nomeMedico = nomeMedico;
+		this.idMedico = idMedico;
+		this.nomePaciente = nomePaciente;
+		this.idPaciente = idPaciente;
 	}
+
 	
+	public String getNomeMedico() {
+		return nomeMedico;
+	}
+
+
+	public void setNomeMedico(String nomeMedico) {
+		this.nomeMedico = nomeMedico;
+	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -28,12 +48,7 @@ public class AgendamentoDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getNomePaciente() {
-		return nomePaciente;
-	}
-	public void setNomePaciente(String nomePaciente) {
-		this.nomePaciente = nomePaciente;
-	}
+	
 	public String getData() {
 		return data;
 	}
@@ -47,14 +62,6 @@ public class AgendamentoDTO {
 		this.horario = horario;
 	}
 
-	public String getNomeMedico() {
-		return nomeMedico;
-	}
-
-	public void setNomeMedico(String nomeMedico) {
-		this.nomeMedico = nomeMedico;
-	}
-	
 	public String getObs() {
 		return obs;
 	}
@@ -64,5 +71,29 @@ public class AgendamentoDTO {
 	}
 
 
+	public String getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(String idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public String getNomePaciente() {
+		return nomePaciente;
+	}
+
+	public void setNomePaciente(String nomePaciente) {
+		this.nomePaciente = nomePaciente;
+	}
+
+	public String getIdPaciente() {
+		return idPaciente;
+	}
+
+	public void setIdPaciente(String idPaciente) {
+		this.idPaciente = idPaciente;
+	}
+	
 	
 }

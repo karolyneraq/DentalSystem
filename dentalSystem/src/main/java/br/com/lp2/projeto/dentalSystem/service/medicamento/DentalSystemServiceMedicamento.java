@@ -12,6 +12,8 @@ public interface DentalSystemServiceMedicamento {
     Boolean edit(String id,MedicamentoDTO medicamento);
 
     Boolean delete(String id);
-
-
+    
+    int buscarID(String id);
+    
+    String buscarIDPorNome(String nome);
 }

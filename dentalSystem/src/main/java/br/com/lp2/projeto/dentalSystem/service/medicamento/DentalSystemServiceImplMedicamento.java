@@ -58,6 +58,35 @@ public class DentalSystemServiceImplMedicamento implements DentalSystemServiceMe
         }
     }
 
+    @Override
+    public int buscarID(String id) {
+    	boolean verificar;
+    	int achou=0;
+    	if(list().size() != 0) {
+	    	for(int i=0; i<list().size(); i++) {
+	    		verificar = list().get(i).getId().contains(id);
+	    		if(verificar==true) {
+	    			achou=i;
+	    		}
+	    	}
+    	}
+    	return achou;
+    }
+
+    @Override
+    public String buscarIDPorNome(String nome) {
+    	boolean verificar;
+    	String achou=null;
+    	if(list().size() != 0) {
+	    	for(int i=0; i<list().size(); i++) {
+	    		verificar = list().get(i).getNome().toLowerCase().contains(nome.toLowerCase());
+	    		if(verificar==true) {
+	    			achou =list().get(i).getId();
+	    		}
+	    	}
+    	}
+    	return achou;
+    } 
 
     @Override
     public Boolean edit(String id, MedicamentoDTO medicamento) {
