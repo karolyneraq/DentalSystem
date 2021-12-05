@@ -1,6 +1,4 @@
-@charset "UTF-8";
- 
-/* Gerais */
+/* gerais*/
 .row {
     margin: 0;
 }
@@ -11,7 +9,18 @@ p, li{
     color: white;
     font-size: 14px;
 }
- 
+
+.div_principal{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height:100%;
+    width:100%;
+}
+
 /* Barra de navegação */
 h1{
     font-family: Source Serif Pro;
@@ -131,18 +140,7 @@ nav > a:hover{
     box-sizing: border-box;
 }
 
-.div_principal{
-    display: grid;
-    grid-template-areas:
-    "header"
-    "main";
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    height:100%;
-    width:100%;
-}
-
-
+/* Paciente*/
 .o-main{
     grid-area: main;
     font-family: Roboto;
@@ -159,14 +157,21 @@ nav > a:hover{
     display: grid;
     grid-template-columns: 1fr 12fr 2fr;
 }
-
 h2{
     font-size: 16px;
     font-weight: bold;
 }
 
+
 h3{
+    font-size: 16px;
+    color: black;
+}
+h4{
     font-size: 14px;
+    display: inline-block;
+    color: grey;
+    margin: 1px;
 }
 
 .paciente-escolhido{
@@ -174,26 +179,32 @@ h3{
 }
 
 .escolher-paciente{
-    padding-top: 40px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.escolher-paciente::after{
-    content: "";
-    background: url("arrow-down.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    position: absolute;
-    height: 100%;
-    width: 30px;
-    right: 10px;
-    top: 235px;
-
-    transition: all 0.4s;
+.nome-paciente{
+    padding-left: 10px;
 }
 
-/*Dados do paciente*/
+.escolher-paciente>select{
+    color: white;
+}
+
+#opcoes-paciente{
+    border-radius: 10px;
+    background-color: #173C6D;
+    color: white;
+    width: fit-content;
+    height: 40px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+/*Card*/
 
 .o-footer{
     font-family: Roboto;
@@ -236,19 +247,8 @@ h3{
     grid-template-columns: 1fr 1fr;
 }
 
-#dados-paciente{
+#receituario{
     padding-top: 0px;
-}
-
-#campos-informacoes-paciente{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 20px;
-}
-
-.campos-consultas{
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 3fr 1.5fr;
 }
 
 .col-6{
@@ -257,11 +257,13 @@ h3{
 
 .card{
     max-height: 220px;
+    
 }
 
-/*Historico*/
 
-#historico-options{
+/*Cards*/
+
+#receituario-options, #encaminhamento-options, #atestados-options{
     display: grid;
     grid-template-columns: 4fr 1.2fr;
 }
@@ -273,24 +275,26 @@ h3{
     grid-template-columns: 1.5fr 1.5fr 1fr;
 }
 
-.campos-historico{
+.campos-receituario, .campos-encaminhamento{
     display: grid;
     grid-template-columns: 2fr 2fr 3fr;
     text-align: center;
 }
 
-#historico{
+/*Receituário*/
+
+#receituario-historico{
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
 }
 
-.campos-historico .data, .campos-historico .horario, .campos-historico .profissional{
+.campos-receituario .data, .campos-receituario .horario, .campos-receituario .profissional{
     padding-top: 15px;
 }
 
-.campos-historico .data{
+.campos-receituario .data{
     border-style: solid;
     border-color: #989898;
     border-width: 0.5px;
@@ -299,7 +303,7 @@ h3{
     border-left: 0ch;
 }
 
-.campos-historico .horario{
+.campos-receituario .horario{
     border-style: solid;
     border-color: #989898;
     border-width: 0.5px;
@@ -343,15 +347,187 @@ h3{
     border-right: 0ch;
 }
 
-/*Mensagens*/
+/*Encaminhamento*/
 
-#btn-menu{
-    padding: 0;
+#historico-encaminhamento{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.message-hint{
-    color: #989898;
+.campos-encaminhamento .data, .campos-encaminhamento .horario, .campos-encaminhamento .profissional{
+    padding-top: 15px;
+}
+
+.campos-encaminhamento .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-encaminhamento .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.info-1 .horario, .info-1 .data, .info-1 .profissional{
+    padding-top: 10px;
+}
+
+.info-1 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-1 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-1 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/*Atestado*/
+
+#card-atestado{
+    width: 700px;
+}
+
+.campos-atestados{
+    display: grid;
+    grid-template-columns:  2fr 2fr 3fr 3fr;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+}
+
+#histoico-atestados{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-atestados .data, .campos-atestados .horario, .campos-atestados .profissional, .campos-atestados .para{
+    padding-top: 15px;
+}
+
+.campos-atestados .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-atestados .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+.campos-atestados .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+
+.info-2{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 3fr;
+    text-align: center;
+}
+
+.info-2 .horario, .info-2 .data, .info-2 .profissional, .info-2 .para{
+    padding-top: 10px;
+}
+
+.info-2 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-2 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-2 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-2 .para{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/* Modal*/
+.modal-header{
+    background: #67dfc7;
+    color: #173C6D;  
+  }
+
+.listagem{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+
+/*botão fechar*/
+
+#button-excluir{
+    background: #173C6D;
+    color:white;  
 }
