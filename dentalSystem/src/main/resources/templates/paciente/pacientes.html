@@ -67,19 +67,9 @@
 		return true;
 		}
 	</script>
+  <div th:insert="fragmentos/menu.html :: menuDentalSystem"></div>
 </head>
 <body>
-    <header>
-        <h1>DentalSystem</h1>
-    </header>
-    <nav>
-       <a href="/pacienteCadastro" style="text-decoration:none">Pacientes</a>
-       <a href="/dentistaMenu" style="text-decoration:none">Dentistas</a>
-       <a href="/medicamentoMenu" style="text-decoration:none">Medicamentos</a>
-       <a href="#" style="text-decoration:none">Notificações</a>
-       <a href="#" style="text-decoration:none">Perfil</a>
-       <div class="animation start-pacientes"></div>
-    </nav>
     <main class="o-main">
         <div id="formulario">
             <div class="form-group">
