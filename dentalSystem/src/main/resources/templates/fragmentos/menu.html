@@ -19,19 +19,9 @@
         <a href="#" style="text-decoration:none">Notificações</a>
         <a href="#" style="text-decoration:none">Perfil</a>
 
-        <div th:switch="${name}"> 
-            <div th:case="'pacientes'">
-                <div class="animation start-pacientes"></div>
-            </div>
-            <div th:case="'dentistas'">
-                <div class="animation start-dentistas"></div>
-            </div>
-            <div th:case="'medicamentos'">
-                <div class="animation start-medicamentos"></div>
-            </div>
-            <div th:case="'notificações'">
-                <div class="animation start-notificações"></div>
-            </div>
-      </div>
+        <div th:if="${name} eq 'pacientes'" class="animation start-pacientes"></div>
+        <div th:if="${name} eq 'dentistas'" class="animation start-dentistas"></div>
+        <div th:if="${name} eq 'medicamentos'" class="animation start-medicamentos"></div>
+        <div th:if="${name} eq 'notificações'" class="animation start-notificações"></div>
     </nav>
 </div>
