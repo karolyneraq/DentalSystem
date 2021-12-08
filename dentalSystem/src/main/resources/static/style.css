@@ -1,0 +1,97 @@
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+
+}
+
+.div_principal{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height:100%;
+    width:100%;
+}
+
+h1{
+    font-family: Source Serif Pro;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.o-title{
+    grid-area: header;
+    background: #173C6D;
+}
+
+.o-main{
+    grid-area: main;
+}
+
+h2, .o-login, .o-email, .o-user, .o-senha, .email, .user, .senha, .cadastrar, .o-termo{
+    font-family: Roboto;
+
+}
+
+h2{
+    font-size: 33px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 590;
+}
+
+.o-login{
+    font-size: 18px;
+    text-align: center;
+    color: #525252;
+}
+
+#formulario{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.o-email, .o-user, .o-senha{
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#email-input, #senha-input, #usuario-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 450px;
+    height: 45px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-top: 5px;
+  }
+
+#cadastrar-button{
+    margin-top: 20px;
+    background: #173C6D;
+    border-radius: 10px;
+    width: 450px;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+  }
+
+.o-termo{
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #525252;
+}
