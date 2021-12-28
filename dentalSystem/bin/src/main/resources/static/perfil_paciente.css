@@ -1,0 +1,340 @@
+@charset "UTF-8";
+ 
+/* Gerais */
+.row {
+    margin: 0;
+}
+.container {
+    padding: 70px 0;
+}
+p, li{
+    color: white;
+    font-size: 14px;
+}
+ 
+
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+    box-sizing: border-box;
+}
+
+
+
+.o-main{
+    grid-area: main;
+    font-family: Roboto;
+
+}
+
+/* Conteudo */
+
+.paciente{
+    background-color: #FFFDFD;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 12fr 2fr;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 14px;
+}
+
+.paciente-escolhido{
+    padding-top: 15px;
+}
+
+.escolher-paciente{
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+.escolher-paciente::after{
+    content: "";
+    background: url("arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    right: 10px;
+    top: 235px;
+
+    transition: all 0.4s;
+}
+
+/* Dados do paciente */
+
+.o-footer{
+    background-color: #F2F2F2;
+    font-family: Roboto;
+}
+
+.card-header{
+    background-color: #A0EECA;
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+}
+
+.titulo{
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.campos{
+    text-align: center;
+}
+
+.campos-texto{
+    font-weight: bold;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-bottom: 0px;
+    padding-top: 4px;
+}
+
+#dados-paciente{
+    padding-top: 0px;
+}
+
+#campos-informacoes-paciente{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 20px;
+}
+
+.campos-consultas{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 3fr 1.5fr;
+}
+
+.col-6{
+    padding-left: 50px;
+}
+
+.card{
+    max-height: 220px;
+}
+
+/* Historico */
+
+#historico-options{
+    display: grid;
+    grid-template-columns: 4fr 1.2fr;
+}
+
+.btn-options-1{
+    padding-bottom: 0px;
+    padding-top: 4px;
+}
+
+.campos-historico{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+#historico{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-historico .data, .campos-historico .horario, .campos-historico .profissional{
+    padding-top: 15px;
+}
+
+.campos-historico .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-historico .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.info-1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+.info-1 .horario, .info-1 .data, .info-1 .profissional{
+    padding-top: 10px;
+}
+
+.info-1 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-1 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-1 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/* Mensagens */
+
+#btn-menu{
+    padding: 0;
+}
+
+.message-hint{
+    color: #989898;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Modal*/
+  
+#modal{
+    max-width: 1000px;
+    min-width: 600px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, +5%);
+}
+
+
+.modal-header{
+    background: #67dfc7;
+    color: #173C6D;  
+  }
+
+/* Listar - Model */
+
+#header-listar-modal{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+}
+
+  #busca{
+    padding-bottom: 30px;
+    padding-top: 0px;
+    width: 300px;
+    height: 20px;
+}
+
+#busca input{
+    border-radius: 10px;
+    border-color: #173C6D;
+    border-width: 3px;
+    text-align: left;
+    font-size: 15px;
+    padding: 0 0 0 5px;
+    background-color: #FFFFFF;
+    pointer-events: auto;
+}
+
+#busca input:focus{
+    outline: none;
+}
+.listagem{
+    display: grid;
+    grid-template-columns: 1.3fr 0.6fr 0.6fr 0.2fr 0.2fr;
+}
+
+#titulo-listagem{
+    background: rgba(160, 238, 202, 0.3);
+    border-radius: 5px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+*/Outras definições/
+
+  h5{
+    font-weight: bold;
+  }
+  .form-check-label{
+      color:black;
+  }
+  
+  .form-check-label{
+    align-content:space-between;
+}
+#button-cancelar{
+    background: #E5E5E5;
+    color: #173C6D;
+}
+#button-cadastrar, #button-listar{
+    background: #173C6D;
+    color:white;
+}
+h6{
+    display: inline-block;
+    color: black;
+    margin: 10px;
+}
+
+.observacoes{
+    padding-top: 10px;
+}
+#button-excluir{
+    background: #173C6D;
+    color:white;  
+}

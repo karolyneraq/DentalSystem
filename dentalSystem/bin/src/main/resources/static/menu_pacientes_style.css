@@ -48,9 +48,9 @@ header > h1{
 nav{
     position: relative;
     margin: 0%;
-    height: 50px;
+    height: 45px;
     background-color: #173C6D;
-    padding: 19px;
+    padding: 10px;
     justify-content: space-between;
     font-size: 0;
     box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
@@ -84,32 +84,32 @@ a:nth-child(1){
 }
 nav .start-pacientes, a:nth-child(1):hover~.animation{
     width: 140px;
-    left: 20px;
+    left: 10px;
 }
  
 a:nth-child(2){
-    width: 140px;
+    width: 160px;
 }
 nav .start-agendamento, a:nth-child(2):hover~.animation{
     width: 140px;
-    left: 161px;
+    left: 160px;
 }
  
 a:nth-child(3){
-    width: 140px;
+    width: 160px;
 }
 
 nav .start-medicamentos, a:nth-child(3):hover~.animation{
     width: 140px;
-    left: 303px;
+    left: 320px;
 }
  
 a:nth-child(4){
-    width: 162px;
+    width: 160px;
 }
 nav .start-notificações, a:nth-child(4):hover~.animation{
-    width: 162px;
-    left: 440px;
+    width: 142px;
+    left: 480px;
 }
 
 a:nth-child(5){
@@ -118,7 +118,7 @@ a:nth-child(5){
 
 nav .start-perfil, a:nth-child(5):hover~.animation{
     width: 90px;
-    left: 600px;
+    left: 630px;
 }
  
 nav > a:hover{
@@ -317,7 +317,7 @@ h2, .o-pacientes .cadastrar{
     background: #E5E5E5;
     color: #173C6D;
 }
-#button-cadastrar{
+#button-cadastrar, #button-listar{
     background: #173C6D;
     color:white;
 }
@@ -329,4 +329,9 @@ h6{
 h7{
     margin: 5px;
     color: black;
+}
+
+#button-excluir{
+    background: #173C6D;
+    color:white;  
 }

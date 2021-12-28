@@ -1,0 +1,225 @@
+@charset "UTF-8";
+ 
+/* Gerais */
+body{
+    color: white;
+}
+.row {
+    margin: 0;
+}
+.container {
+    padding: 70px 0;
+}
+p, li{
+    color: white;
+    font-size: 14px;
+}
+
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+        
+
+}
+
+.o-main{
+    grid-area: main;
+}
+
+h2, .o-pacientes .cadastrar{
+    font-family: Roboto;
+
+}
+
+p, li{
+    color: black;
+    font-size: 15px;
+}
+
+h2, .cadastrar{
+    font-family: Roboto, sans-serif;
+    color: #173C6D;
+    font-weight:lighter;
+    text-align: center;
+    margin: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+h3{
+    color: black;
+    font-weight:lighter;
+    font-family: Roboto;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    display: inline-block;   
+}
+h5{
+    font-weight: bold;
+}
+h6{
+    display: inline-block;
+    color: black;
+    margin: 10px;
+}
+
+.o-main{
+    grid-area:main;
+    background-color: #F2F2F2;
+}
+
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+    margin-top: 0px;
+}
+
+.o-footer{
+    background-color: #F2F2F2;
+    font-family: Roboto;
+    width: 600px;
+    margin-left: 350px;
+    margin-top: 0px;
+    height: max-content;
+}
+.card-header{
+    background-color: #A0EECA;
+    width: 592px;
+    height:max-content;
+    font-family: Roboto;
+    color:black;
+}
+.col-6{
+    padding-left: 0px;
+}
+.card{
+    height:640px;
+    width: 600px;
+    background-color: white;
+    margin-left: 300px;
+    margin-top: 0px;
+    border-radius: 8px;
+    border: 4px solid #57cc97;
+}
+.titulo{
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.campos{
+    text-align: center;
+}
+
+.campos-texto{
+    font-weight: bold;
+}
+
+#dados-exclusao{
+    padding-top: 0px;
+}
+#formulario{
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+  #nome-completo-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 500px;
+    height: 40px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+  }
+
+  #celular-input, #cpf-input,  #rg-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 300px;
+    height: 40px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+  }
+
+  #data-nasc-input, #sexo-input{
+    border-radius: 10px;
+    border-color: #57CC97;
+    width: 250px;
+    height: 45px;
+    border-width: 3px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: Roboto;
+  }
+
+  #message-text{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #57CC97;
+    border-width: 3px;
+  }
+
+#cadastrar-button{
+    margin-top: 20px;
+    background: #173C6D;
+    border-radius: 10px;
+    width: 450px;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    align-self: auto;
+  }
+
+#button-cadastrar, #button-listar{
+    background: #173C6D;
+    color:white;
+}
+h6{
+    display: inline-block;
+    color: black;
+    margin: 10px;
+}
+
+.form-group.floating>label {
+    bottom: 34px;
+    left: 8px;
+    position: relative;
+    background-color: white;
+    color: rgb(60, 60, 60);
+    padding: 3px 5px 0px 5px;
+    font-size: 16px;
+    transition: 0.1s;
+    pointer-events: none;
+    transform-origin: bottom left;
+}
+
+.form-control.floating:focus~label{
+    transform: translate(1px,-85%) scale(0.80);
+    color: #173C6D;
+    background-color: white;
+}
+
+.form-control.floating:valid~label{
+    transform-origin: bottom left;
+    transform: translate(1px,-85%) scale(0.80);
+    opacity: .8;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Dados do Paciente</title>
+    <div th:insert="fragmentos/menu.html :: menuDentalSystem(name='pacientes')"></div>
+    <link rel="stylesheet" href="atualizar_paciente.css">
+
+    <!--Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <main class="o-main">
+    <footer>
+        <div class="container" id="dados-exclusao">
+            <div class="row g-4">
+                <div class="col-6" id="informacoes-exclusao">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="titulo">
+                                <h2>Atualizar Dados do Paciente</h2>
+                            </div>
+                        </div>
+                 		<div class="card-body">
+                          <form th:action="@{/pacienteUpdates(id=${paciente.id})}"  th:object="${paciente}" method="Post">
+                            <div class="form-group floating">
+                              <input class="form-control floating"  type="text" th:field="${paciente.nome}" th:value="${paciente.nome}" id="nome-completo-input" nome="nome" required>
+                              <label for="nome-completo-input">Nome</label>
+
+                              <input class="form-control floating" type="text"  th:field="${paciente.celular}" th:value="${paciente.celular}" id="celular-input" nome="celular" required>
+                              <label for="celular-input">Celular</label>
+
+                              <input class="form-control floating" type="text"  th:field="${paciente.cpf}" th:value="${paciente.cpf}" id="cpf-input" nome="cpf" required>
+                              <label for="cpf-input">CPF</label>
+
+                              <input class="form-control floating" type="text"  th:field="${paciente.rg}" th:value="${paciente.rg}" id="rg-input" nome="rg" required>
+                              <label for="rg-input">RG</label>
+
+                              <input class="form-control floating" type="text"  th:field="${paciente.sexo}" th:value="${paciente.sexo}" id="sexo-input" nome="sexo" required>
+                              <label for="sexo-input">Sexo</label>
+
+                            </div>
+                            <input class="form-control" type="date"  th:field="${paciente.dataNascimento}" th:value="${paciente.dataNascimento}" id="data-nasc-input" nome="dataNascimento" required>
+                            <h6 class="observacoes">Observações:</h6>
+                            <label for="message-text"></label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                            <div class="modal-footer">
+                             
+                              <button type="submit" class="btn btn-cadastrar" id="button-cadastrar">Atualizar</button>
+                            </div>
+                          </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+ </footer>                  
+</main>         
+</body>
+</html>

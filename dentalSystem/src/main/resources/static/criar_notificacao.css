@@ -1,0 +1,202 @@
+@charset "UTF-8";
+ 
+/* Gerais */
+/* Barra de navegação */
+h1{
+    font-family: Source Serif Pro;
+    font-size: 32px;
+    color: white;
+    padding-top: 5px;
+}
+ 
+body{
+    background-color: white; 
+    min-width: 1000px;
+}
+ 
+header{
+    background-color: #173C6D;
+    padding: 40px;
+    margin: 0%;
+    font-family:  Source Serif Pro;
+}
+ 
+header > h1{
+    margin: 0%;
+    text-align: left;
+    color: white;
+    font-size: 50px;
+ 
+}
+
+nav{
+    position: relative;
+    margin: 0%;
+    height: 45px;
+    min-width: 500px;
+    background-color: #173C6D;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
+}
+ 
+nav > a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 5px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+nav .animation{
+    position:absolute;
+    height: 5px;
+    top: 40px;
+    z-index: 0;
+    background: #1abc9c;
+    width: 0px;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+ 
+}
+nav a:nth-child(1){
+    width: 140px;
+}
+nav .start-pacientes, a:nth-child(1):hover~.animation{
+    width: 140px;
+    left: 10px;
+}
+ 
+nav a:nth-child(2){
+    width: 160px;
+}
+nav .start-agendamento, a:nth-child(2):hover~.animation{
+    width: 140px;
+    left: 160px;
+}
+ 
+nav a:nth-child(3){
+    width: 160px;
+}
+
+nav .start-medicamentos, a:nth-child(3):hover~.animation{
+    width: 140px;
+    left: 320px;
+}
+ 
+nav a:nth-child(4){
+    width: 160px;
+}
+nav .start-notificações, a:nth-child(4):hover~.animation{
+    width: 142px;
+    left: 480px;
+}
+
+nav a:nth-child(5){
+    width: 90px;
+}
+
+nav .start-perfil, a:nth-child(5):hover~.animation{
+    width: 90px;
+    left: 630px;
+}
+ 
+nav > a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+
+    font-family: Roboto;
+}
+
+.card{
+    max-width: 900px;
+    min-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, +5%);
+    border: 4px solid #57cc97;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+
+.card-header{
+    background-color: #A0EECA;
+    font-family: Roboto, sans-serif;
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card-body{
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#message-text{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #57CC97;
+    border-width: 3px;
+    min-height: 200px;
+  }
+
+h3{
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+#button-excluir{
+    background: #173C6D;
+    color:white;
+    margin-left: 400px;
+    border-radius: 10px;
+    width:100px;
+    height: 40px;
+    font-size: 18px;
+    align-self: auto;
+    margin-top: 0px;
+}
+
+
+/* Modal */
+#modal{
+    max-width: 1000px;
+    min-width: 600px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, +5%);
+}
+
+.modal-header{
+    background: #67dfc7;
+    color: #173C6D;  
+}
+
+#button-excluirmodal{
+    background: #173C6D;
+    color:white;  
+}
+
+#button-cancelar{
+    background: #E5E5E5;
+    color: #173C6D;
+    display: inline-block; 
+}

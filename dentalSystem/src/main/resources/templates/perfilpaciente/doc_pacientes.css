@@ -1,0 +1,533 @@
+/* gerais*/
+.row {
+    margin: 0;
+}
+.container {
+    padding: 70px 0;
+}
+p, li{
+    color: white;
+    font-size: 14px;
+}
+
+.div_principal{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height:100%;
+    width:100%;
+}
+
+/* Barra de navegação */
+h1{
+    font-family: Source Serif Pro;
+    font-size: 32px;
+    color: white;
+    padding-top: 5px;
+}
+ 
+body{
+    background-color: #F2F2F2;
+    margin-bottom: 170px;
+}
+ 
+header{
+    background-color: #173C6D;
+    padding: 40px;
+    margin: 0%;
+   
+}
+ 
+header > h1{
+    margin: 0%;
+    text-align: left;
+    color: white;
+    font-size: 50px;
+ 
+}
+
+nav{
+    position: relative;
+    margin: 0%;
+    height: 45px;
+    background-color: #173C6D;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
+}
+ 
+nav > a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 5px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+nav .animation{
+    position:absolute;
+    height: 5px;
+    top: 40px;
+    z-index: 0;
+    background: #1abc9c;
+    width: 0px;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+ 
+}
+a:nth-child(1){
+    width: 140px;
+}
+nav .start-pacientes, a:nth-child(1):hover~.animation{
+    width: 140px;
+    left: 10px;
+}
+ 
+a:nth-child(2){
+    width: 160px;
+}
+nav .start-agendamento, a:nth-child(2):hover~.animation{
+    width: 140px;
+    left: 160px;
+}
+ 
+a:nth-child(3){
+    width: 160px;
+}
+
+nav .start-medicamentos, a:nth-child(3):hover~.animation{
+    width: 140px;
+    left: 320px;
+}
+ 
+a:nth-child(4){
+    width: 160px;
+}
+nav .start-notificações, a:nth-child(4):hover~.animation{
+    width: 142px;
+    left: 480px;
+}
+
+a:nth-child(5){
+    width: 90px;
+}
+
+nav .start-perfil, a:nth-child(5):hover~.animation{
+    width: 90px;
+    left: 630px;
+}
+ 
+nav > a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+    box-sizing: border-box;
+}
+
+/* Paciente*/
+.o-main{
+    grid-area: main;
+    font-family: Roboto;
+
+}
+
+/*Conteudo*/
+
+.paciente{
+    background-color: #FFFDFD;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 12fr 2fr;
+}
+h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+h3{
+    font-size: 16px;
+    color: black;
+}
+h4{
+    font-size: 14px;
+    display: inline-block;
+    color: grey;
+    margin: 1px;
+}
+
+.paciente-escolhido{
+    padding-top: 15px;
+}
+
+.escolher-paciente{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nome-paciente{
+    padding-left: 10px;
+}
+
+.escolher-paciente>select{
+    color: white;
+}
+
+#opcoes-paciente{
+    border-radius: 10px;
+    background-color: #173C6D;
+    color: white;
+    width: fit-content;
+    height: 40px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+/*Card*/
+
+.o-footer{
+    font-family: Roboto;
+}
+
+.card-header{
+    background-color: #A0EECA;
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+}
+
+.titulo{
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.campos{
+    text-align: center;
+}
+
+.campos-texto{
+    font-weight: bold;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-bottom: 0px;
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#receituario{
+    padding-top: 0px;
+}
+
+.col-6{
+    padding-left: 50px;
+}
+
+.card{
+    max-height: 220px;
+    
+}
+
+
+/*Cards*/
+
+#receituario-options, #encaminhamento-options, #atestados-options{
+    display: grid;
+    grid-template-columns: 4fr 1.2fr;
+}
+
+.btn-options-1{
+    padding-bottom: 0px;
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+}
+
+.campos-receituario, .campos-encaminhamento{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+/*Receituário*/
+
+#receituario-historico{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-receituario .data, .campos-receituario .horario, .campos-receituario .profissional{
+    padding-top: 15px;
+}
+
+.campos-receituario .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-receituario .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.info-1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+.info-1 .horario, .info-1 .data, .info-1 .profissional{
+    padding-top: 10px;
+}
+
+.info-1 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-1 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-1 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/*Encaminhamento*/
+
+#historico-encaminhamento{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-encaminhamento .data, .campos-encaminhamento .horario, .campos-encaminhamento .profissional{
+    padding-top: 15px;
+}
+
+.campos-encaminhamento .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-encaminhamento .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.info-1 .horario, .info-1 .data, .info-1 .profissional{
+    padding-top: 10px;
+}
+
+.info-1 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-1 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-1 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/*Atestado*/
+
+#card-atestado{
+    width: 700px;
+}
+
+.campos-atestados{
+    display: grid;
+    grid-template-columns:  2fr 2fr 3fr 3fr;
+    text-align: center;
+}
+
+#histoico-atestados{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-atestados .data, .campos-atestados .horario, .campos-atestados .profissional, .campos-atestados .para{
+    padding-top: 15px;
+}
+
+.campos-atestados .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-atestados .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+.campos-atestados .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+
+.info-2{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr 3fr;
+    text-align: center;
+}
+
+.info-2 .horario, .info-2 .data, .info-2 .profissional, .info-2 .para{
+    padding-top: 10px;
+}
+
+.info-2 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-2 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-2 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-2 .para{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/* Modal*/
+.modal-header{
+    background: #67dfc7;
+    color: #173C6D;  
+  }
+
+.listagem{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-top: 3px;
+}
+
+/*botão fechar*/
+
+#button-excluir{
+    background: #173C6D;
+    color:white;  
+}

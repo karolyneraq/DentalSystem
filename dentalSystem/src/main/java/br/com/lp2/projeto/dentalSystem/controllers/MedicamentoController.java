@@ -44,13 +44,13 @@ public class MedicamentoController {
     	dP= service.buscarID(id);
     	MedicamentoDTO medicamento = service.list().get(dP);
     	model.addAttribute("medicamento", medicamento);
-        	return "paciente/atualizar_paciente";
+        	return "medicamento/editar_medicamento";
 	}
     
     @PostMapping("/medicamentoUpdates")
 	public String editSubmit(@RequestParam(value = "id") String id, @ModelAttribute MedicamentoDTO medicamento ) {
     	  service.edit(id,medicamento);
-		  return  "redirect:/pacienteCadastro";
+		  return  "redirect:/medicamentoMenu";
     }
     
     @GetMapping("/medicamentoDeletar")
@@ -58,13 +58,13 @@ public class MedicamentoController {
        	dP= service.buscarID(id);
        	MedicamentoDTO medicamento = service.list().get(dP);
        	model.addAttribute("dentista", medicamento);
-       	return "paciente/excluir_paciente";
+       	return "medicamento/excluir_medicamento";
    	}
        
       
        @GetMapping("/medicamentoExcluir")
    	public String deleteSubmit(@RequestParam(value = "id") String id) {
        	  service.delete(id);
-   		  return "redirect:/pacienteCadastro";
+   		  return "redirect:/medicamentoMenu";
        }
 }

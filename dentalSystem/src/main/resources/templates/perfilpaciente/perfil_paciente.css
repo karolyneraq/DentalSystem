@@ -1,0 +1,357 @@
+@charset "UTF-8";
+ 
+/* Gerais */
+.row {
+    margin: 0;
+}
+.container {
+    padding: 70px 0;
+}
+p, li{
+    color: white;
+    font-size: 14px;
+}
+ 
+/* Barra de navegação */
+h1{
+    font-family: Source Serif Pro;
+    font-size: 32px;
+    color: white;
+    padding-top: 5px;
+}
+ 
+body{
+    background-color: #F2F2F2;
+    margin-bottom: 170px;
+}
+ 
+header{
+    background-color: #173C6D;
+    padding: 40px;
+    margin: 0%;
+   
+}
+ 
+header > h1{
+    margin: 0%;
+    text-align: left;
+    color: white;
+    font-size: 50px;
+ 
+}
+
+nav{
+    position: relative;
+    margin: 0%;
+    height: 45px;
+    background-color: #173C6D;
+    padding: 10px;
+    justify-content: space-between;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgb(0,0,0,.1);
+}
+ 
+nav > a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 5px;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+nav .animation{
+    position:absolute;
+    height: 5px;
+    top: 40px;
+    z-index: 0;
+    background: #1abc9c;
+    width: 0px;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+ 
+}
+a:nth-child(1){
+    width: 140px;
+}
+nav .start-pacientes, a:nth-child(1):hover~.animation{
+    width: 140px;
+    left: 10px;
+}
+ 
+a:nth-child(2){
+    width: 160px;
+}
+nav .start-agendamento, a:nth-child(2):hover~.animation{
+    width: 140px;
+    left: 160px;
+}
+ 
+a:nth-child(3){
+    width: 160px;
+}
+
+nav .start-medicamentos, a:nth-child(3):hover~.animation{
+    width: 140px;
+    left: 320px;
+}
+ 
+a:nth-child(4){
+    width: 160px;
+}
+nav .start-notificações, a:nth-child(4):hover~.animation{
+    width: 142px;
+    left: 480px;
+}
+
+a:nth-child(5){
+    width: 90px;
+}
+
+nav .start-perfil, a:nth-child(5):hover~.animation{
+    width: 90px;
+    left: 630px;
+}
+ 
+nav > a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+* {
+
+    list-style:none; 
+
+    padding:0px;
+
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.div_principal{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height:100%;
+    width:100%;
+}
+
+
+.o-main{
+    grid-area: main;
+    font-family: Roboto;
+
+}
+
+/*Conteudo*/
+
+.paciente{
+    background-color: #FFFDFD;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 12fr 2fr;
+}
+
+h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 14px;
+}
+
+.paciente-escolhido{
+    padding-top: 15px;
+}
+
+.escolher-paciente{
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+.escolher-paciente::after{
+    content: "";
+    background: url("arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    right: 10px;
+    top: 235px;
+
+    transition: all 0.4s;
+}
+
+/*Dados do paciente*/
+
+.o-footer{
+    font-family: Roboto;
+}
+
+.card-header{
+    background-color: #A0EECA;
+    display: grid;
+    grid-template-columns: 16fr 1fr;
+}
+
+.titulo{
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.campos{
+    text-align: center;
+}
+
+.campos-texto{
+    font-weight: bold;
+}
+
+#btn-opcoes{
+    background: #173C6D;
+    width: 30px;
+    height: 28px;
+    color: #FFFFFF;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.btn-options{
+    padding-bottom: 0px;
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#dados-paciente{
+    padding-top: 0px;
+}
+
+#campos-informacoes-paciente{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 20px;
+}
+
+.campos-consultas{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 3fr 1.5fr;
+}
+
+.col-6{
+    padding-left: 50px;
+}
+
+.card{
+    max-height: 220px;
+}
+
+/*Historico*/
+
+#historico-options{
+    display: grid;
+    grid-template-columns: 4fr 1.2fr;
+}
+
+.btn-options-1{
+    padding-bottom: 0px;
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+}
+
+.campos-historico{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+#historico{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.campos-historico .data, .campos-historico .horario, .campos-historico .profissional{
+    padding-top: 15px;
+}
+
+.campos-historico .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.campos-historico .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-top: 0ch;
+    border-left: 0ch;
+}
+
+.info-1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    text-align: center;
+}
+
+.info-1 .horario, .info-1 .data, .info-1 .profissional{
+    padding-top: 10px;
+}
+
+.info-1 .horario{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+}
+
+.info-1 .data{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+.info-1 .profissional{
+    border-style: solid;
+    border-color: #989898;
+    border-width: 0.5px;
+    border-bottom: 0ch;
+    border-left: 0ch;
+    border-right: 0ch;
+}
+
+/*Mensagens*/
+
+#btn-menu{
+    padding: 0;
+}
+
+.message-hint{
+    color: #989898;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

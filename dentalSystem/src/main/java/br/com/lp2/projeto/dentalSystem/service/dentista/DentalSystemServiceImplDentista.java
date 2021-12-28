@@ -73,14 +73,14 @@ public class DentalSystemServiceImplDentista implements DentalSystemServiceDenti
     }
 
     @Override
-    public String buscarIDPorNome(String nome) {
+    public int buscarIDPorNome(String nome) {
     	boolean verificar;
-    	String achou=null;
+    	int achou=0;
     	if(list().size() != 0) {
 	    	for(int i=0; i<list().size(); i++) {
 	    		verificar = list().get(i).getNome().toLowerCase().contains(nome.toLowerCase());
 	    		if(verificar==true) {
-	    			achou =list().get(i).getId();
+	    			achou =i;
 	    		}
 	    	}
     	}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Teste</title>
+
+    <!-- Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <!--BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="doc_pacientes.css">
+
+   <!--Script-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <h1>DentalSystem</h1>
+    </header>
+    <nav>
+       <a href="#" style="text-decoration:none">Pacientes</a>
+       <a href="#" style="text-decoration:none">Agendamento</a>
+       <a href="#" style="text-decoration:none">Medicamentos</a>
+       <a href="#" style="text-decoration:none">Notificações</a>
+       <a href="#" style="text-decoration:none">Perfil</a>
+       <div class="animation start-pacientes"></div>
+    </nav>
+
+    <main class="o-main">
+        <div class="paciente">
+          <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#1abc9c" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+          </div>
+          <div class="paciente-escolhido">
+              <h3>Maria Alencar Lima</h3>
+              <h3>Nº Prontuário: 02</h3>
+          </div>
+          <div class="escolher-paciente">
+              <label for="opcoes-paciente" class="opcoes-paciente">
+              <h3 class="nome-paciente">Maria Alencar Lima</h3></label>
+              <select id="opcoes-paciente">
+                <option value="1">Informações do Paciente</option>
+                <option selected value="2">Documentos</option>
+                <option value="3">Tratamento</option>
+              </select>
+          </div>
+        </div>
+      </main>
+
+      <footer class="o-footer">
+        <div class="container" id="receituario">
+            <div class="row g-4">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header" id="receituario-options">
+                            <div class="titulo"><h2>Receituario</h2></div>
+                            <div class="btn-options-1">
+                                <button type="button" class="btn btn-secundary" id="btn-opcoes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                  </svg>
+                                </button>
+                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirModal" id="btn-opcoes">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                      </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body" id="receituario-historico">
+                            <div class="campos-receituario">
+                                <div class="data"><h3 class="campos-texto">Data</h3></div>
+                                <div class="horario"><h3 class="campos-texto">Horário</h3></div>
+                                <div class="profissional"><h3 class="campos-texto">Profissional</h3></div>
+                            </div>
+                            <div class="info-1">
+                                <div class="data">
+                                    <h3>20/07/2021</h3>
+                                    <h3>01/07/2021</h3>
+                                </div>
+                                <div class="horario">
+                                    <h3>15:00</h3>
+                                    <h3>14:00</h3>
+                                </div>
+                                <div class="profissional">
+                                    <h3>Dra. Francielly Alencar</h3>
+                                    <h3>Dra. Rebeca Alencar</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header" id="encaminhamento-options">
+                            <div class="titulo"><h2>Encaminhamento</h2></div>
+                            <div class="btn-options-1">
+                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#atualizarModal" id="btn-opcoes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                  </svg>
+                                </button>
+                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirModal" id="btn-opcoes">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                      </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body" id="historico-encaminhamento">
+                            <div class="campos-encaminhamento">
+                                <div class="data"><h3 class="campos-texto">Data</h3></div>
+                                <div class="horario"><h3 class="campos-texto">Horário</h3></div>
+                                <div class="profissional"><h3 class="campos-texto">Profissional</h3></div>
+                            </div>
+                            <div class="info-1">
+                                <div class="data">
+                                    <h3>20/07/2021</h3>
+                                </div>
+                                <div class="horario">
+                                    <h3>15:00</h3>
+                                </div>
+                                <div class="profissional">
+                                    <h3>Dra. Francielly Alencar</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card" id="card-atestado">
+                        <div class="card-header" id="atestados-options">
+                            <div class="titulo"><h2>Atestados</h2></div>
+                            <div class="btn-options-1">
+                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirAtestado" id="btn-opcoes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                  </svg>
+                                </button>
+                                <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirModal" id="btn-opcoes">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                      </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body" id="histoico-atestados">
+                            <div class="campos-atestados">
+                                <div class="data"><h3 class="campos-texto">Data</h3></div>
+                                <div class="horario"><h3 class="campos-texto">Horário</h3></div>
+                                <div class="profissional"><h3 class="campos-texto">Profissional</h3></div>
+                                <div class="para"><h3 class="campos-texto">Para</h3></div>
+                            </div>
+                            <div class="info-2">
+                                <div class="data">
+                                    <h3>20/07/2021</h3>
+                                </div>
+                                <div class="horario">
+                                    <h3>15:00</h3>
+                                </div>
+                                <div class="profissional">
+                                    <h3>Dra. Francielly Alencar</h3>
+                                </div>
+                                <div class="para">
+                                    <h3>Mariana Lima</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+   <!-- Modal -->
+   <div class="modal" tabindex="-1" role="dialog" id="imprimirModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Histórico de atestados</h5>
+        </div>
+        <div class="modal-body">
+            <div class="listagem" id="informacoes-listagem">
+                <h3>Atestado em dias</h3>
+                <h4>20/12/2021 às 15:40</h4>
+                <div class="btn-options">
+                    <button type="button" class="btn btn-secundary" data-toggle="modal" data-target="#imprimirAtestado" id="btn-opcoes">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                          </svg>
+                    </button>
+                </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button-excluir">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

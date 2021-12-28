@@ -15,5 +15,5 @@ public interface DentalSystemServiceDentista {
 
     int buscarID(String id);
     
-    String buscarIDPorNome(String nome);
+    int buscarIDPorNome(String nome);
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Paciente</title>
+    <div th:insert="fragmentos/menu.html :: menuDentalSystem(name='pacientes')"></div>
+    <link rel="stylesheet" href="excluir_paciente.css">
+ 
+    <!--Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="o-main">
+        <footer>
+            <div class="container" id="dados-exclusao">
+                <div class="row g-4">
+                    <div class="col-6" id="informacoes-exclusao">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="titulo">
+                                    <h2>Excluir Paciente</h2>
+                                </div>
+                            </div>
+                            <div class="card-body" id="campos-informacoes-exclusao">
+                                <div class="campos-1">
+                                    <div class="form-group">
+                                        <p class="o-paciente">Paciente</p>
+                                        <div class="caixa" id="nome">
+                                            <h3><span th:text= "${paciente.nome}"></span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="o-cpf"> CPF</p>
+                                        <div class="caixa" id="cpf">
+                                            <h3><span th:text="${paciente.cpf}"></span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="o-celular"> Celular</p>
+                                        <div class="caixa" id="cpf">
+                                            <h3><span th:text="${paciente.celular}"></span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="o-dataNasc"> Data de Nascimento</p>
+                                        <div class="caixa" id="data">
+                                            <h3><span th:text= "${paciente.dataNascimento}"></span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="o-sexo"> Sexo</p>
+                                        <div class="caixa" id="data">
+                                            <h3><span th:text="${paciente.sexo}"></span></h3>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-excluir" data-toggle="modal"  data-target="#excluirModal"  onclick="loadModalEcluir()" id="button-excluir">Excluir</button>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+     </footer> 
+     <div class="modal" tabindex="-1" role="dialog" id="excluirModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Excluir Paciente</h5>
+            </div>
+            <div class="modal-body">
+              <img src="warning.png"  width="60" height="60"alt="">
+              <h6>Você tem certeza que quer excluir este paciente?</h6>
+            </div>
+            <div class="modal-footer">
+                <a th:href="@{/pacienteExcluir(id=${paciente.id})}"> <button type="button" class="btn btn-primary" id="button-excluirmodal">Excluir</button></a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="button-cancelar">Cancelar</button>
+            </div>
+          </div>
+        </div>
+    </div>                                 
+</main>
+</body>
+</html>

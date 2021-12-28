@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <div th:insert="fragmentos/menu.html :: menuDentalSystem(name='pacientes')"></div>
+    <link rel="stylesheet" href="agendamento.css">
+
+    <!--Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <main class="o-main">
+            <footer class="o-footer">
+                <div class="container" id="dados-agendamento">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="card" id="informacoes-agendamento">
+                                <div class="card-header" id="card-header">
+                                    <div class="titulo">
+                                        Agendar Consulta
+                                    </div>
+                                </div>
+                                <div class="card-body" id="campos-informacoes-agendamento">
+                                    <form id="formulario" th:action="@{/AgendamentoAdd(id=${agendamento.idPaciente})}" th:object="${agendamento}" method="post">
+                                        <div class="form-group floating">
+                                        	<input  type="hidden" th:field="${agendamento.idPaciente}" th:value="${agendamento.idPaciente}" id="paciente-input" required value=""/>
+                                            
+                                            <input class="form-control floating" type="text" th:field="${agendamento.nomePaciente}" th:value="${agendamento.nomePaciente}" id="paciente-input" required value=""/>
+                                            <label for="paciente-input">Paciente</label>
+                          		
+                          					<!--<label>Dentista</label>
+                          					<select th:field="${agendamento.idMedico}" >
+	                          					<option th:value="''">Escolha um dentista</option>
+	                          					<option th:each="dentistalist : ${dentistalista}" 
+	                          							th:value="${dentistalist.id}"  
+	                          							th:text="${dentistalist.nome}">
+	                          					</option>
+                        					</select>
+                          					-->
+                          					 <input type="hidden" th:field="${agendamento.idMedico}" th:value="${agendamento.idMedico}" id="paciente-input" required value=""/>
+                          					 <input class="form-control floating" type="text" th:field="*{nomeMedico}" id="dentista-input" required value=""/>
+                                            <label for="dentista-input">Dentista</label>
+                                        </div>
+                                       
+                                        <div class="o-data"> Data:</div>
+                                        <input class="form-control" type="date" th:field="*{data}" id="data-input" nome="data"  aria-label="Search"
+                                        aria-describedby="search-addon"/>
+                                            
+                                        <div class="o-horario"> Horário:</div>
+                                        <input class="form-control" type="time"  th:field="*{horario}" id="horario-input"  nome="horario" aria-label="Search"
+                                        aria-describedby="search-addon"/>
+                                        
+                                        <button type="submit" class="btn btn-agendar"  id="button-agendar">Agendar</button>
+                                        
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                        
+        </footer>
+    </main>
+</body>
+</html>
